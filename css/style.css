@@ -23,9 +23,11 @@
 
 :root {
     --primary-yellow: #FFCC00;
-    --primary-black: #231900;
+    --primary-black: #1C1C1C;
     --second-white: #FFFFFF;
     --font: Libre-Franklin, sans-serif;
+    --max-width: 1200px;
+    --header-height: 64px;
 }
 
 /* **************** Reset **************** */
@@ -90,3 +92,107 @@ em {
     text-decoration: none;
     color: inherit;
 }
+
+svg {
+    width: 100%;
+    display: block;
+    fill: currentColor;
+}
+
+/* ************** Components ************* */
+
+.header {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 16;
+    height: var(--header-height);
+    background: var(--primary-black);
+}
+
+.header .container_max-width {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 32px;
+}
+
+.logo__text {
+    font-weight: 500;
+    font-style: italic;
+}
+
+.nav {
+    position: fixed;
+    bottom: var(--header-height);
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    background-color: var(--primary-yellow);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.nav__sections {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: inherit;
+    text-align: center;
+}
+
+.nav__items {
+    width: inherit;
+    padding: 0.5em 0;
+}
+
+.nav__items:hover {
+    background-color: var(--second-white);
+}
+
+.nav__items:hover .nav__link {
+    color: var(--primary-yellow);
+}
+
+.nav--active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.menu {
+    cursor: pointer;
+}
+
+/* ************** Utilities ************** */
+.container_max-width {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: var(--max-width);
+}
+
+.icons {
+    cursor: pointer;
+    fill: var(--primary-yellow);
+    width: 1em;
+    height: 1em;
+}
+
+.icons:hover {
+    transform: scale(1.2);
+}
+
+[class$='--hidden'] {
+    display: none;
+}
+
+/* ************* Site Styles ************* */
+
+/* ************ Media Queries ************ */
