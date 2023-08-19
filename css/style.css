@@ -20,3 +20,9 @@
     font-weight: 700;
     font-style: bold;
 }
+
+:root {
+    --primary-yellow: #FFCC00;
+    --primary-black: #231900;
+    --second-white: #FFFFFF;
+}
