@@ -1,7 +1,7 @@
 /* ********** Custom Properties ********** */
 @font-face {
     font-family: Libre-Franklin;
-    src: url(assets\fonts\LibreFranklin-Regular.ttf);
+    src: url(/assets/fonts/LibreFranklin-Regular.ttf);
     font-weight: 400;
     font-style: normal;
 }
@@ -9,22 +9,25 @@
 
 @font-face {
     font-family: Libre-Franklin;
-    src: url(assets\fonts\LibreFranklin-MediumItalic.ttf);
-    font-weight: 500;
+    src: url(/assets/fonts/LibreFranklin-SemiBoldItalic.ttf);
+    font-weight: 600;
     font-style: italic;
 }
 
 @font-face {
     font-family: Libre-Franklin;
-    src: url(assets\fonts\LibreFranklin-Bold.ttf);
+    src: url(/assets/fonts/LibreFranklin-Bold.ttf);
     font-weight: 700;
     font-style: bold;
 }
 
 :root {
-    --primary-yellow: #FFCC00;
-    --primary-black: #1C1C1C;
-    --second-white: #FFFFFF;
+    --first-color: #FFCC00;
+
+    --second-color: #1C1C1C;
+    --black-alpha-color: rgba(0, 0, 0, 0.5);
+    --third-color: #FFFFFF;
+    --white-alpha-color: rgba(255, 255, 255, 0.5);
     --font: Libre-Franklin, sans-serif;
     --max-width: 1200px;
     --header-height: 64px;
@@ -40,7 +43,7 @@ body {
     font-family: var(--font);
     font-size: 16px;
     overflow-x: hidden;
-    color: var(--second-white);
+    color: var(--second-color);
 }
 
 img,
@@ -108,19 +111,24 @@ svg {
     width: 100%;
     z-index: 16;
     height: var(--header-height);
-    background: var(--primary-black);
+    background: var(--first-color);
 }
 
 .header .container_max-width {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 32px;
+    /* font-size: 32px; */
 }
 
 .logo__text {
-    font-weight: 500;
+    color: var(--second-color);
+    font-weight: 600;
     font-style: italic;
+}
+
+.logo__text:hover {
+    transform: scale(1.2);
 }
 
 .nav {
@@ -134,7 +142,7 @@ svg {
     justify-content: center;
     gap: 1rem;
     width: 100%;
-    background-color: var(--primary-yellow);
+    background-color: var(--first-color);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
@@ -149,16 +157,18 @@ svg {
 }
 
 .nav__items {
+    font-weight: 700;
+    font-style: bold;
     width: inherit;
     padding: 0.5em 0;
 }
 
 .nav__items:hover {
-    background-color: var(--second-white);
+    background-color: var(--second-color);
 }
 
 .nav__items:hover .nav__link {
-    color: var(--primary-yellow);
+    color: var(--first-color);
 }
 
 .nav--active {
@@ -166,8 +176,24 @@ svg {
     pointer-events: auto;
 }
 
-.menu {
+.logo__text,
+.shopping-card,
+.menu-btn {
+    font-size: 32px;
+}
+
+.menu-btn {
     cursor: pointer;
+}
+
+/*? ********** HeroImage ********** ¿*/
+
+.hero-image {
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 /* ************** Utilities ************** */
@@ -180,7 +206,7 @@ svg {
 
 .icons {
     cursor: pointer;
-    fill: var(--primary-yellow);
+    fill: var(--second-color);
     width: 1em;
     height: 1em;
 }
@@ -193,6 +219,91 @@ svg {
     display: none;
 }
 
+.link-to_btn {
+    font-weight: 700;
+    font-style: bold;
+    color: var(--second-color);
+    background-color: var(--first-color);
+    padding: 1em;
+    border-radius: 0.5em;
+    transition: all 0.5s ease-out;
+}
+
+.link-to_btn:hover {
+    transform: scale(1.2);
+}
+
+.text_yellow {
+    color: var(--first-color);
+}
+
+.text_white_tr {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--third-color);
+}
+
 /* ************* Site Styles ************* */
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.home__text {
+    font-size: 7.5vw;
+    font-weight: 600;
+    font-style: italic;
+    text-align: center;
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+.text_yellow,
+.text_white_tr {
+    display: inline-block;
+}
+
+.text_yellow {
+    -moz-animation: to-move-positive 0.8s linear infinite;
+    -webkit-animation: to-move-positive 0.8s linear infinite;
+    animation: to-move-positive 0.8s linear;
+}
+
+.text_white_tr {
+    -moz-animation: to-move-negative 0.8s linear infinite;
+    -webkit-animation: to-move-negative 0.8s linear infinite;
+    animation: to-move-negative 0.8s linear;
+}
+
+@keyframes to-move-positive {
+    from {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+
+    to {
+        -moz-transform: translateX(-0%);
+        -webkit-transform: translateX(-0%);
+        transform: translateX(-0%);
+    }
+}
+
+@keyframes to-move-negative {
+    from {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+
+    to {
+        -moz-transform: translateX(-0%);
+        -webkit-transform: translateX(-0%);
+        transform: translateX(-0%);
+    }
+}
 
 /* ************ Media Queries ************ */
