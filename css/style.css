@@ -18,7 +18,7 @@
     font-family: Libre-Franklin;
     src: url(/assets/fonts/LibreFranklin-Bold.ttf);
     font-weight: 700;
-    font-style: bold;
+    font-style: normal;
 }
 
 :root {
@@ -29,6 +29,7 @@
     --third-color: #FFFFFF;
     --white-alpha-color: rgba(255, 255, 255, 0.5);
     --font: Libre-Franklin, sans-serif;
+    --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
     --max-width: 1200px;
     --header-height: 64px;
 }
@@ -78,7 +79,10 @@ h2,
 h3,
 h4,
 h5,
-h6,
+h6 {
+    margin: 0;
+}
+
 p,
 span,
 a,
@@ -88,12 +92,30 @@ i,
 b,
 u,
 em {
-    margin: 0;
     font-size: 1em;
     font-weight: inherit;
     font-style: inherit;
     text-decoration: none;
     color: inherit;
+}
+
+form,
+input,
+textarea,
+select,
+button,
+label {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: transparent;
+    color: inherit;
+    display: block;
+}
+
+button {
+    padding: 0;
+    cursor: pointer;
+    border: none;
 }
 
 svg {
@@ -196,12 +218,105 @@ svg {
     background-position: center;
 }
 
+/*? ********** Card Movil ********** ¿*/
+
+.cards {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+
+    border-radius: 16px;
+    background-color: var(--third-color);
+
+    font-size: 12px;
+    box-shadow: 0px 2px 13px 2px rgba(30, 30, 30, 0.62);
+}
+
+.card__header {
+    width: 100%;
+    height: 240px;
+    margin: 0;
+    overflow: hidden;
+}
+
+.card__img {
+    width: inherit;
+    height: inherit;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+/* .card__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0px;
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+} */
+
+.card__body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 4px;
+    padding: 8px 8px;
+}
+
+.card__title {
+    grid-column: span 2;
+    text-align: left;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 16px;
+}
+
+.card__price {
+    align-self: center;
+    color: var(--second-color);
+    text-align: left;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.card__btn {
+    justify-self: right;
+    font-weight: 700;
+    font-style: normal;
+    width: max-content;
+    padding: 8px;
+    border-radius: 4px;
+    color: var(--third-color);
+    background-color: var(--first-color);
+}
+
+
 /* ************** Utilities ************** */
 .container_max-width {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     max-width: var(--max-width);
+}
+
+.section_padding {
+    padding: 2rem 1rem;
 }
 
 .icons {
@@ -240,6 +355,13 @@ svg {
 .text_white_tr {
     color: transparent;
     -webkit-text-stroke: 1.5px var(--third-color);
+}
+
+.section__title {
+    font-weight: 700;
+    font-style: bold;
+    color: var(--second-color);
+    margin-bottom: 2rem;
 }
 
 /* ************* Site Styles ************* */
@@ -304,6 +426,12 @@ svg {
         -webkit-transform: translateX(-0%);
         transform: translateX(-0%);
     }
+}
+
+.products {
+    /* height: 100vh; */
+    background: #F4F5F7;
+    /* background-color: var(--third-color); */
 }
 
 /* ************ Media Queries ************ */
