@@ -430,7 +430,7 @@ svg {
     font-weight: 700;
     font-style: bold;
     color: var(--second-color);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 /* ************* Site Styles ************* */
@@ -501,6 +501,27 @@ svg {
     /* height: 100vh; */
     background: #F4F5F7;
     /* background-color: var(--third-color); */
+}
+
+.about {
+    width: auto;
+    height: auto;
+}
+
+.about__span {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.625rem;
+}
+
+.about__paragraph {
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+}
+
+.about__figure {
+    margin: 0;
 }
 
 /* ************ Media Queries ************ */
