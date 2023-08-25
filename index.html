@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="sign-up log-up--hidden">
-                        <a href="#">Registrarse</a>
+                        <a href="#sign-up">Registrarse</a>
                     </div>
                 </div>
 
@@ -282,6 +282,79 @@
         <small>Sitio diseñado por <a class="footer__link" href="">Yuber Lobo</a>| © 2023 Todos los derechos
             reservados.</small>
     </footer>
+
+    <article class="modal modal_log-in" id="log-in">
+        <div class="modal__content">
+            <a href="#cerrar" class="modal__close">
+                <svg class="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px">
+                    <path
+                        d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z" />
+                </svg>
+            </a>
+            <form action="" class="form form_log-in">
+                <legend class="form__title">Iniciar Sesión</legend>
+                <input class="form__input" type="email" name="email" id="log-in-email" placeholder="Ingresa tu correo"
+                    title="Ingresa aquí tu correo">
+                <input class="form__input" type="password" name="password" id="log-in-password"
+                    placeholder="Ingresa aquí tu contraseña" title="Ingresa aquí tu contraseña">
+                <input class="form__btn" type="submit" value="Login">
+            </form>
+            <div class="modal__links">
+                <a href="#">¿Has olvidado tu contraseña?</a>
+                <p class="modal__text">¿Aun no tienes una cuenta? <a class="modal__link" href="#sign-up">Regístrate</a>
+                </p>
+            </div>
+        </div>
+    </article>
+
+    <article class="modal modal_sign-up" id="sign-up">
+        <div class="modal__content">
+            <a href="#cerrar" class="modal__close">
+                <svg class="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px">
+                    <path
+                        d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z" />
+                </svg>
+            </a>
+            <form action="" class="form form_sign-up">
+                <legend class="form__title">Registrarse</legend>
+
+                <div class="form__input-box">
+                    <input class="form__input" type="text" name="name" id="name" placeholder="Ingresa tu nombre"
+                        title="Ingresa aquí tu nombre">
+                    <input class="form__input" type="text" name="last-name" id="last-name"
+                        placeholder="Ingresa tu apellido" title="Ingresa aquí tu apellido">
+                </div>
+
+                <div class="form__input-box">
+                    <input class="form__input" type="number" name="doc-number" id="doc-number"
+                        placeholder="Ingresa tu numero de documento" title="Ingresa aquí tu numero de documento">
+
+                    <select class="form__select form__select--unselected" name="doc-type" id="doc-type">
+                        <option class="form__option" value="none" hidden>Ingrese el tipo de documento</option>
+                        <option class="form__option" value="CC">Cédula de Ciudadanía</option>
+                        <option class="form__option" value="CE">Cédula de Extranjería</option>
+                    </select>
+
+                </div>
+
+                <div class="form__input-box">
+                    <input class="form__input" type="tel" name="phone" id="phone"
+                        placeholder="Ingresa tu numero de teléfono" title="Ingresa aquí tu numero de teléfono">
+                    <input class="form__input" type="text" name="address" id="address"
+                        placeholder="Ingresa tu dirección" title="Ingresa aquí tu dirección">
+                </div>
+
+                <div class="form__input-box">
+                    <input class="form__input" type="email" name="email" id="sign-up-email"
+                        placeholder="Ingresa tu correo" title="Ingresa aquí tu correo">
+                    <input class="form__input" type="password" name="sign-up-password" id="password"
+                        placeholder="Ingresa aquí tu contraseña" title="Ingresa aquí tu contraseña">
+                </div>
+                <input class="form__btn" type="submit" value="Registrarse">
+
+            </form>
+        </div>
+    </article>
 
     <script type="module" src="js/script.js"></script>
 </body>

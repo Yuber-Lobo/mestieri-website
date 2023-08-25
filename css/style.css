@@ -45,6 +45,8 @@
 
     --max-width: 1200px;
     --header-height: 64px;
+
+    --color-select: ;
 }
 
 /* **************** Reset **************** */
@@ -164,6 +166,7 @@ svg {
     color: var(--second-color);
     font-weight: var(--font-semi-bold);
     font-style: italic;
+    transition: 0.5s;
 }
 
 .logo__text:hover {
@@ -402,6 +405,161 @@ svg {
     transform: translateY(0);
 }
 
+/*? ********** Login ********** ¿*/
+
+.modal {
+    position: fixed;
+    z-index: 64;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    background-color: var(--black-alpha-color);
+}
+
+.modal__content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0 1rem;
+    padding: 2rem 2rem;
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    background-color: var(--third-color);
+}
+
+.modal_log-in .modal__content {
+    max-width: 400px;
+}
+
+.modal_sign-up .modal__content {
+    max-width: 720px;
+}
+
+.modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.modal__close .icons {
+    font-size: 1.5em;
+}
+
+.modal__close:hover .icons {
+    transform: scale(1.2);
+}
+
+.modal__links {
+    font-size: 0.875rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.modal__link {
+    font-weight: var(--font-semi-bold);
+    font-style: normal;
+    color: var(--first-color);
+}
+
+.modal__text {
+    margin: 0;
+}
+
+.modal[id="log-in"]:target,
+.modal[id="sign-up"]:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: inherit;
+}
+
+.form__title {
+    font-size: 1.5em;
+    font-weight: var(--font-bold);
+    font-style: normal;
+    text-align: center;
+}
+
+.form__input-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: inherit;
+}
+
+.form__input,
+.form__select {
+    width: inherit;
+    border: 0;
+    outline: none;
+    padding: 0.5rem 0;
+    border-bottom: thin solid var(--second-color);
+}
+
+.form__select--unselected {
+    color: var(--black-alpha-color);
+}
+
+.form__select--selected {
+    color: var(--second-color);
+}
+
+.form__option {
+    border: 0;
+    padding: 0;
+    color: var(--second-color);
+}
+
+::placeholder {
+    color: var(--black-alpha-color);
+}
+
+
+.form__btn {
+    font-weight: var(--font-semi-bold);
+    font-style: normal;
+    border: 0;
+    align-self: center;
+    width: max-content;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: var(--third-color);
+    background-color: var(--first-color);
+    transition: 0.5s;
+}
+
+.form__btn:hover {
+    transform: scale(1.2);
+}
+
+@media screen and (min-width: 768px) {
+    .form__input-box {
+        justify-content: space-evenly;
+    }
+
+    .form_sign-up .form__input,
+    .form_sign-up .form__select {
+        width: 45%;
+    }
+}
 
 /* ************** Utilities ************** */
 .container_max-width {
@@ -525,7 +683,7 @@ svg {
 }
 
 .products {
-    background: #F4F5F7;
+    background: var(--third-color);
 }
 
 .products__popular {
@@ -666,6 +824,11 @@ svg {
     .log-in,
     .sign-up {
         display: block;
+    }
+
+    .log-in:hover,
+    .sign-up:hover {
+        transform: scale(1.1);
     }
 
     .sign-up {
