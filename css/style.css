@@ -22,13 +22,20 @@
 
 @font-face {
     font-family: Libre-Franklin;
+    src: url(/assets/fonts/LibreFranklin-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Libre-Franklin;
     src: url(/assets/fonts/LibreFranklin-Bold.ttf);
     font-weight: 700;
     font-style: normal;
 }
 
 :root {
-    --first-color: #FFCC00;
+    --first-color: #f6c016;
 
     --second-color: #1C1C1C;
     --black-alpha-color: rgba(0, 0, 0, 0.5);
@@ -104,10 +111,9 @@ span,
 a,
 strong,
 blockquote,
-i,
 b,
-u,
-em {
+u {
+    margin: 0;
     font-size: 1em;
     font-weight: inherit;
     font-style: inherit;
@@ -154,6 +160,7 @@ svg {
     font-style: normal;
     height: var(--header-height);
     background: var(--first-color);
+    box-shadow: var(--box-shadow);
 }
 
 .header .container_max-width {
@@ -591,8 +598,8 @@ svg {
 .link-to_btn {
     font-weight: var(--font-bold);
     font-style: normal;
-    color: var(--second-color);
-    background-color: var(--first-color);
+    color: var(--first-color);
+    background-color: var(--second-color);
     padding: 1em;
     border-radius: 0.5em;
     transition: all 0.5s ease-out;
@@ -625,10 +632,12 @@ svg {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    height: 100vh;
+    background-color: var(--first-color);
 }
 
-.home__text {
+
+.home__text_sm {
     font-size: 7.5vw;
     font-weight: var(--font-semi-bold);
     font-style: italic;
@@ -636,6 +645,42 @@ svg {
     line-height: 1.6;
     overflow: hidden;
 }
+
+.home__text_lg,
+.home__figure {
+    width: 100%;
+}
+
+.home__text_lg {
+    order: 2;
+    height: auto;
+}
+
+.home__figure {
+    display: flex;
+    height: 40%;
+}
+
+.home__img {
+    object-fit: contain;
+    object-position: center;
+}
+
+.home__text_lg {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 0.5rem;
+    /* padding: 0 2rem; */
+    /* margin-top: var(--header-height); */
+}
+
+.home__parragraph {
+    text-align: center;
+    padding: 0 1rem;
+}
+
 
 .text_yellow,
 .text_white_tr {
@@ -769,6 +814,7 @@ svg {
         position: sticky;
         top: 0;
         height: calc(var(--header-height) - 0.5rem);
+        /* box-shadow: var(--box-shadow); */
     }
 
     .header .container_max-width {
@@ -832,13 +878,37 @@ svg {
     }
 
     .sign-up {
-        border-radius: 0.5rem;
         padding: 0.5rem;
-        color: var(--third-color);
-        background-color: var(--second-color);
     }
 
     .menu-btn {
         display: none;
+    }
+
+    /* home */
+    .home {
+        flex-direction: row;
+    }
+
+    .home__text_sm {
+        display: none;
+    }
+
+    .home__text_lg,
+    .home__figure {
+        width: 50%;
+        height: 100%;
+    }
+
+    .home__text_lg {
+        justify-content: center;
+        gap: 1rem;
+        order: unset;
+        padding: 0 2rem;
+    }
+
+    .home__img {
+        /* backdrop-filter: blur(10px);
+        transform: scaleX(-1); */
     }
 }
