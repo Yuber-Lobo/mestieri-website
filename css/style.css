@@ -429,7 +429,7 @@ svg {
 .card__quantity-btn {
     display: flex;
     align-items: center;
-    font-size: 1em;
+    font-size: 1.5em;
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
     color: var(--third-color);
