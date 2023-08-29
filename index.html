@@ -26,19 +26,20 @@
                         <li class="nav__items"><a class="nav__link" href="#productos">Productos</a></li>
                         <li class="nav__items"><a class="nav__link" href="#acerca">Acerca</a></li>
                         <li class="nav__items"><a class="nav__link" href="#contacto">Contacto</a></li>
-                        <li class="nav__items"><a class="nav__link" href="#">Menu</a>
-                            <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
-                                width="48">
-                                <path
-                                    d="M220-80q-24 0-42-18t-18-42v-520q0-24 18-42t42-18h110v-10q0-63 43.5-106.5T480-880q63 0 106.5 43.5T630-730v10h110q24 0 42 18t18 42v520q0 24-18 42t-42 18H220Zm170-640h180v-10q0-38-26-64t-64-26q-38 0-64 26t-26 64v10Zm210 180q13 0 21.5-8.5T630-570v-90h-60v90q0 13 8.5 21.5T600-540Zm-240 0q13 0 21.5-8.5T390-570v-90h-60v90q0 13 8.5 21.5T360-540Z" />
-                            </svg>
+                        <li class="nav__items"><a class="nav__link nav__link-svg" href="menu.html">Menu
+                                <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48"
+                                    viewBox="0 -960 960 960" width="48">
+                                    <path
+                                        d="M220-80q-24 0-42-18t-18-42v-520q0-24 18-42t42-18h110v-10q0-63 43.5-106.5T480-880q63 0 106.5 43.5T630-730v10h110q24 0 42 18t18 42v520q0 24-18 42t-42 18H220Zm170-640h180v-10q0-38-26-64t-64-26q-38 0-64 26t-26 64v10Zm210 180q13 0 21.5-8.5T630-570v-90h-60v90q0 13 8.5 21.5T600-540Zm-240 0q13 0 21.5-8.5T390-570v-90h-60v90q0 13 8.5 21.5T360-540Z" />
+                                </svg>
+                            </a>
                         </li>
                     </ul>
                 </nav>
             </div>
 
             <div class="header__options">
-                <div class="shopping-card">
+                <div class="shopping-cart">
                     <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                         width="48">
                         <path
@@ -51,7 +52,7 @@
                         <a href="#log-in">Iniciar Sesión</a>
                     </div>
 
-                    <div class="sign-up link-to_btn log-up--hidden">
+                    <div class="sign-up link_to_btn link_to_btn--dark log-up--hidden">
                         <a href="#sign-up">Registrarse</a>
                     </div>
                 </div>
@@ -77,12 +78,6 @@
 
         <section id="inicio" class="home">
 
-            <!-- <div class="home__text_sm">
-                <span class="text_yellow">¿Y TU, ESTAS DISPUESTO</span> <br> <span class="text_white_tr">
-                    A PROBARNOS?
-                </span>
-            </div> -->
-
             <div class="home__text_lg">
                 <h1 class="home__title"><em class="home__logo">Mestieri</em> Fast Food</h1>
                 <p class="home__parragraph">¡Bienvenidos a Mestieri Fast Food, el lugar donde la deliciosa comida rápida
@@ -96,7 +91,7 @@
                 <p class="home__parragraph">
                     ¡Ven y descubre por qué somos la opción favorita de los amantes de la comida rápida!
                 </p>
-                <a class="home__btn link-to_btn" href="#">Ordena Ahora</a>
+                <a class="home__btn link_to_btn link_to_btn--dark" href="#">Ordena Ahora</a>
             </div>
             <figure class="home__figure">
                 <img class="home__img" src="assets/images/logo-mestieri.jpg" alt="">
@@ -110,21 +105,55 @@
                 <h2 class="section__title">Mas populares</h2>
 
                 <div class="cards">
+                    <a href="#card-1" class="card__modal">
+                        <div class="card">
+                            <figure class="card__header">
+                                <img class="card__img" src="assets/images/products/hamburguesa-la-fundadora.jpg"
+                                    alt="Hamburguesa Fundadora">
+                            </figure>
 
-                    <div class="card">
-                        <figure class="card__header">
-                            <img class="card__img" src="assets/images/products/hamburguesa-la-fundadora.jpg"
-                                alt="Hamburguesa Fundadora">
-                        </figure>
+                            <div class="card__body">
 
-                        <div class="card__body">
-                            <h3 class="card__title">Hamburguesa La Fundadora</h3>
-                            <h4 class="card__price">COP $15.000</h4>
-                            <button class="card__btn">
-                                Añadir al carrito
-                            </button>
+                                <div class="card__body-section-start">
+                                    <h3 class="card__title">Hamburguesa La Fundadora</h3>
+                                    <div class="card__rating">
+                                        <svg class="card__icon icons" xmlns="http://www.w3.org/2000/svg" height="48"
+                                            viewBox="0 -960 960 960" width="48">
+                                            <path
+                                                d="m233-80 65-281L80-550l288-25 112-265 112 265 288 25-218 189 65 281-247-149L233-80Z" />
+                                        </svg>
+                                        <span class="card__score">4.9</span>
+                                    </div>
+                                </div>
+                                <p class="card__description">
+                                    Pan brioche 🍔 + Carne 100% de Res 🍣 + Queso mozzarella 🧀 + Cebolla caramelizada
+                                    🧅 +
+                                    Tocineta 🥓 + Vegetales frescos 🥬🥒 + salsas de la casa. 🍶
+                                </p>
+                                <div class="card__body-section-end">
+                                    <h4 class="card__price">COP $15.000</h4>
+                                    <button class="card__add-cart-btn card__add-cart-btn--hidden">
+                                        <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48"
+                                            viewBox="0 -960 960 960" width="48">
+                                            <path
+                                                d="M465-613v-123H341v-60h124v-123h60v123h123v60H525v123h-60ZM289.788-80Q260-80 239-101.212q-21-21.213-21-51Q218-182 239.212-203q21.213-21 51-21Q320-224 341-202.788q21 21.213 21 51Q362-122 340.788-101q-21.213 21-51 21Zm404 0Q664-80 643-101.212q-21-21.213-21-51Q622-182 643.212-203q21.213-21 51-21Q724-224 745-202.788q21 21.213 21 51Q766-122 744.788-101q-21.213 21-51 21ZM290-287q-42 0-61.5-34t.5-69l61-111-150-319H62v-60h116l170 364h292l156-280 52 28-153 277q-9.362 16.667-24.681 25.833Q655-456 634-456H334l-62 109h494v60H290Z" />
+                                        </svg>
+                                    </button>
+                                    <div class="card__quantity-btn card__quantity-btn--hidden">
+                                        <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48"
+                                            viewBox="0 -960 960 960" width="48">
+                                            <path d="M200-450v-60h560v60H200Z" />
+                                        </svg>
+                                        <span class="card__num-items">1</span>
+                                        <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48"
+                                            viewBox="0 -960 960 960" width="48">
+                                            <path d="M450-450H200v-60h250v-250h60v250h250v60H510v250h-60v-250Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </a>
 
                     <div class="card">
                         <figure class="card__header">
@@ -167,35 +196,35 @@
                         <img class="slider__img" src="/assets/images/products/hamburguesa-de-pollo.jpg" alt="">
                         <div class="slider__hover">
                             <h3 class="slider__title">Hamburguesa de Pollo</h3>
-                            <a class="slider__btn link-to_btn" href="#">Ordena Ahora</a>
+                            <a class="slider__btn link_to_btn link_to_btn--light" href="#">Ordena Ahora</a>
                         </div>
                     </div>
                     <div class="slider__slide">
                         <img class="slider__img" src="/assets/images/products/hamburguesa-mixta.jpg" alt="">
                         <div class="slider__hover">
                             <h3 class="slider__title">Hamburguesa Mixta</h3>
-                            <a class="slider__btn link-to_btn" href="#">Ordena Ahora</a>
+                            <a class="slider__btn link_to_btn link_to_btn--light" href="#">Ordena Ahora</a>
                         </div>
                     </div>
                     <div class="slider__slide">
                         <img class="slider__img" src="/assets/images/products/sandwich-pollo.jpg" alt="">
                         <div class="slider__hover">
                             <h3 class="slider__title">Sandwich de Pollo</h3>
-                            <a class="slider__btn link-to_btn" href="#">Ordena Ahora</a>
+                            <a class="slider__btn link_to_btn link_to_btn--light" href="#">Ordena Ahora</a>
                         </div>
                     </div>
                     <div class="slider__slide">
                         <img class="slider__img" src="/assets/images/products/salchipapa-basica-principal.jpg" alt="">
                         <div class="slider__hover">
                             <h3 class="slider__title">Salchipapa Básica Principal</h3>
-                            <a class="slider__btn link-to_btn" href="#">Ordena Ahora</a>
+                            <a class="slider__btn link_to_btn link_to_btn--light" href="#">Ordena Ahora</a>
                         </div>
                     </div>
                     <div class="slider__slide">
                         <img class="slider__img" src="/assets/images/products/papas-cheedar.jpg" alt="">
                         <div class="slider__hover">
                             <h3 class="slider__title">Papas Cheedar</h3>
-                            <a class="slider__btn link-to_btn" href="#">Ordena Ahora</a>
+                            <a class="slider__btn link_to_btn link_to_btn--light" href="#">Ordena Ahora</a>
                         </div>
                     </div>
                 </div>
@@ -298,6 +327,82 @@
         <small>Sitio diseñado por <a class="footer__link" href="">Yuber Lobo</a>| © 2023 Todos los derechos
             reservados.</small>
     </footer>
+
+
+    <article class="modal modal-card" id="card-1">
+
+        <div class="modal__content modal-card__content">
+
+            <a href="#cerrar" class="modal-card__close modal__close">
+                <svg class="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px">
+                    <path
+                        d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z" />
+                </svg>
+            </a>
+
+            <div class="modal-card__header hero-image"
+                style="--hero-image-url: url('/assets/images/products/hamburguesa-la-fundadora.jpg')">
+            </div>
+
+            <div class="modal-card__body card__body">
+
+                <div class="modal-card__body-section-start card__body-section-start">
+                    <h3 class="modal-card__title card__title">Hamburguesa La Fundadora</h3>
+                    <div class="modal-card__rating card__rating">
+                        <svg class="modal-card__icon card__icon icons" xmlns="http://www.w3.org/2000/svg" height="48"
+                            viewBox="0 -960 960 960" width="48">
+                            <path
+                                d="m233-80 65-281L80-550l288-25 112-265 112 265 288 25-218 189 65 281-247-149L233-80Z" />
+                        </svg>
+                        <span class="modal-card__score card__score">4.9</span>
+                    </div>
+                </div>
+
+                <p class="modal-card__description card__description">
+                    Pan brioche 🍔 + Carne 100% de Res 🍣 + Queso mozzarella 🧀 + Cebolla caramelizada
+                    🧅 +
+                    Tocineta 🥓 + Vegetales frescos 🥬🥒 + salsas de la casa. 🍶
+                </p>
+
+                <div class="modal-card__body-section-end card__body-section-end">
+                    <h4 class="modal-card__price card__price">COP $15.000</h4>
+
+                    <button class="modal-card__add-cart-btn card__add-cart-btn modal-card__ card__add-cart-btn--hidden">
+                        <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                            width="48">
+                            <path
+                                d="M465-613v-123H341v-60h124v-123h60v123h123v60H525v123h-60ZM289.788-80Q260-80 239-101.212q-21-21.213-21-51Q218-182 239.212-203q21.213-21 51-21Q320-224 341-202.788q21 21.213 21 51Q362-122 340.788-101q-21.213 21-51 21Zm404 0Q664-80 643-101.212q-21-21.213-21-51Q622-182 643.212-203q21.213-21 51-21Q724-224 745-202.788q21 21.213 21 51Q766-122 744.788-101q-21.213 21-51 21ZM290-287q-42 0-61.5-34t.5-69l61-111-150-319H62v-60h116l170 364h292l156-280 52 28-153 277q-9.362 16.667-24.681 25.833Q655-456 634-456H334l-62 109h494v60H290Z" />
+                        </svg>
+                    </button>
+
+                    <div class="modal-card__quantity-btn card__quantity-btn">
+                        <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                            width="48">
+                            <path d="M200-450v-60h560v60H200Z" />
+                        </svg>
+                        <span class="modal-card__num-items card__num-items">1</span>
+                        <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                            width="48">
+                            <path d="M450-450H200v-60h250v-250h60v250h250v60H510v250h-60v-250Z" />
+                        </svg>
+                    </div>
+
+                    <!-- <div class="modal-card__add-cart-text-btn">
+                        <a href="#" class="link_to_btn link_to_btn--light">Añadir al
+                            Carrito</a>
+                    </div> -->
+
+                </div>
+
+                <div class="modal-card__cart-btn">
+                    <a href="#" class="link_to_btn link_to_btn--light">Añadir al Carrito</a>
+                    <a href="#" class="link_to_btn link_to_btn--light">Comprar</a>
+                </div>
+            </div>
+
+        </div>
+
+    </article>
 
     <article class="modal modal_log-in" id="log-in">
         <div class="modal__content">
