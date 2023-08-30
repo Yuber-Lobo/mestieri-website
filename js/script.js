@@ -1,9 +1,10 @@
-import heroImage from "./components/hero-image.js";
-import menu from "./components/menu.js"
+import menu from "./components/menu.js";
 import selectColor from "./components/select-color.js";
+import { addCart, quantityItems } from "./components/shopping-cart.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     menu();
-    heroImage();
+    quantityItems();
+    addCart();
     selectColor();
 })

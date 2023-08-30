@@ -11,6 +11,8 @@
     color: var(--third-color);
 } */
 
+/* ************** Components ************* */
+
 .home-menu {}
 
 
@@ -74,6 +76,16 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+/* ************** Utilities ************** */
+
+/* ************* Site Styles ************* */
+
+.card__add-cart-btn {
+    font-size: 1.5rem;
+}
+
+/* ************ Media Queries ************ */
 
 @media screen and (min-width: 1024px) {
 

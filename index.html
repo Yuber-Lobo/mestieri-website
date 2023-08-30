@@ -39,13 +39,13 @@
             </div>
 
             <div class="header__options">
-                <div class="shopping-cart">
+                <a href="shopping-cart.html" class="shopping-cart">
                     <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                         width="48">
                         <path
                             d="M286.788-81Q257-81 236-102.212q-21-21.213-21-51Q215-183 236.212-204q21.213-21 51-21Q317-225 338-203.788q21 21.213 21 51Q359-123 337.788-102q-21.213 21-51 21Zm400 0Q657-81 636-102.212q-21-21.213-21-51Q615-183 636.212-204q21.213-21 51-21Q717-225 738-203.788q21 21.213 21 51Q759-123 737.788-102q-21.213 21-51 21ZM235-741l110 228h288l125-228H235Zm-30-60h589.074q22.964 0 34.945 21Q841-759 829-738L694-495q-11 19-28.559 30.5Q647.881-453 627-453H324l-56 104h491v60H277q-42 0-60.5-28t.5-63l64-118-152-322H51v-60h117l37 79Zm140 288h288-288Z" />
                     </svg>
-                </div>
+                </a>
 
                 <div class="header__access">
                     <div class="log-in log-in--hidden">
@@ -134,13 +134,13 @@
                                 </p>
                                 <div class="card__body-section-end">
                                     <h4 class="card__price">COP $15.000</h4>
-                                    <button class="card__add-cart-btn card__add-cart-btn--hidden">
+                                    <a href="shopping-cart.html" class="card__add-cart-btn card__add-cart-btn--hidden">
                                         <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48"
                                             viewBox="0 -960 960 960" width="48">
                                             <path
                                                 d="M465-613v-123H341v-60h124v-123h60v123h123v60H525v123h-60ZM289.788-80Q260-80 239-101.212q-21-21.213-21-51Q218-182 239.212-203q21.213-21 51-21Q320-224 341-202.788q21 21.213 21 51Q362-122 340.788-101q-21.213 21-51 21Zm404 0Q664-80 643-101.212q-21-21.213-21-51Q622-182 643.212-203q21.213-21 51-21Q724-224 745-202.788q21 21.213 21 51Q766-122 744.788-101q-21.213 21-51 21ZM290-287q-42 0-61.5-34t.5-69l61-111-150-319H62v-60h116l170 364h292l156-280 52 28-153 277q-9.362 16.667-24.681 25.833Q655-456 634-456H334l-62 109h494v60H290Z" />
                                         </svg>
-                                    </button>
+                                    </a>
                                     <div class="card__quantity-btn card__quantity-btn--hidden">
                                         <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48"
                                             viewBox="0 -960 960 960" width="48">
@@ -156,36 +156,6 @@
                             </div>
                         </div>
                     </a>
-
-                    <div class="card">
-                        <figure class="card__header">
-                            <img class="card__img" src="assets/images/products/hot-dog-fundador.jpg"
-                                alt="Hamburguesa Fundadora">
-                        </figure>
-
-                        <div class="card__body">
-                            <h3 class="card__title">Hot Dog Fundador</h3>
-                            <h4 class="card__price">COP $13.000</h4>
-                            <button class="card__btn">
-                                Añadir al carrito
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <figure class="card__header">
-                            <img class="card__img" src="assets/images/products/hamburguesa-doble-cheese-&-bacon.jpg"
-                                alt="Hamburguesa Fundadora">
-                        </figure>
-
-                        <div class="card__body">
-                            <h3 class="card__title">Hamburguesa Doble Cheese And Bacon</h3>
-                            <h4 class="card__price">COP $18.000</h4>
-                            <button class="card__btn">
-                                Añadir al carrito
-                            </button>
-                        </div>
-                    </div>
 
                 </div>
 
@@ -378,21 +348,16 @@
                     </button>
 
                     <div class="modal-card__quantity-btn card__quantity-btn">
-                        <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
-                            width="48">
+                        <svg class="card__remove icons" xmlns="http://www.w3.org/2000/svg" height="48"
+                            viewBox="0 -960 960 960" width="48">
                             <path d="M200-450v-60h560v60H200Z" />
                         </svg>
-                        <span class="modal-card__num-items card__num-items">1</span>
-                        <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
-                            width="48">
+                        <input type="number" data-num-items value="1" class="card__num-items"></input>
+                        <svg class="card__add icons" xmlns="http://www.w3.org/2000/svg" height="48"
+                            viewBox="0 -960 960 960" width="48">
                             <path d="M450-450H200v-60h250v-250h60v250h250v60H510v250h-60v-250Z" />
                         </svg>
                     </div>
-
-                    <!-- <div class="modal-card__add-cart-text-btn">
-                        <a href="#" class="link_to_btn link_to_btn--light">Añadir al
-                            Carrito</a>
-                    </div> -->
 
                 </div>
 

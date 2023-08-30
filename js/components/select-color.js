@@ -4,15 +4,18 @@ export default function selectColor() {
 
     let value, selectClass;
 
-    $select.addEventListener("change", (e) => {
+    document.addEventListener("change", (e) => {
 
-        value = $select.value;
-        selectClass = $select.classList.contains("form__select--selected");
+        if (e.target.id === "doc-type") {
 
-        if (value != "none" && !selectClass) {
-            $select.classList.remove("form__select--unselected");
-            $select.classList.add("form__select--selected");
+            value = $select.value;
+            selectClass = $select.classList.contains("form__select--selected");
 
+            if (value != "none" && !selectClass) {
+                $select.classList.remove("form__select--unselected");
+                $select.classList.add("form__select--selected");
+
+            }
         }
     })
 

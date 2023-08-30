@@ -141,6 +141,13 @@ button {
     border: none;
 }
 
+table,
+tr,
+td {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
 svg {
     width: 100%;
     display: block;
@@ -322,9 +329,9 @@ svg {
 /*? ********** Card Movil ********** ¿*/
 
 .cards {
-    margin: 2rem 0;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
     gap: 2rem;
 }
 
@@ -429,21 +436,20 @@ svg {
 .card__quantity-btn {
     display: flex;
     align-items: center;
-    font-size: 1.5em;
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
     color: var(--third-color);
     background-color: var(--first-color);
 }
 
-
 .card__num-items {
     text-align: center;
-    font-size: 1em;
+    width: 32px;
     font-weight: var(--font-bold);
     font-style: normal;
     padding: 0.25rem 0.5rem;
     margin: 0 0.5rem;
+    border: none;
     color: var(--second-color);
     background-color: var(--third-color);
 }
