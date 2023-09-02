@@ -383,15 +383,11 @@ svg {
     padding: 1rem;
 }
 
-.card__body-section-start,
-.card__body-section-end {
+.card__product-detail,
+.card__order-detail {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.card__body-section-end {
-    /* margin-top: 0.5rem; */
 }
 
 .card__title {

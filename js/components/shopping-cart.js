@@ -1,63 +1,62 @@
 const $numItems = document.querySelector(".card__num-items");
-let i = 1;
 
 export function addCart() {
 
-    const $addCardBtn = document.querySelector(".card__add-cart-btn");
-    const $quantityBtn = document.querySelector(".card__quantity-btn");
+    const $addCardBtn = document.querySelectorAll(".card__add-cart-btn");
+    const $quantityBtn = document.querySelectorAll(".card__quantity-btn");
 
-    $quantityBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-    })
+    let nextBrother, previousBrother;
 
-    $addCardBtn.addEventListener("click", (e) => {
-        e.preventDefault();
+    $quantityBtn.forEach(btn => {
 
-        if (e.target.matches(".card__add-cart-btn *")) {
-            console.log(e);
-            $addCardBtn.classList.add("card__add-cart-btn--hidden");
-            $quantityBtn.classList.remove("card__quantity-btn--hidden");
-            $numItems.value = i;
-        }
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+        });
+
     });
 
+    // Activar la opción de numero de productos
+    $addCardBtn.forEach(btn => {
 
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            if (e.currentTarget.matches(".card__add-cart-btn")) {
+
+                btn.classList.add("card__add-cart-btn--hidden");
+
+                nextBrother = btn.nextElementSibling;
+                nextBrother.classList.remove("card__quantity-btn--hidden");
+                nextBrother.children[1].value = 1;
+            }
+        });
+
+    });
 
 }
 
 export function quantityItems() {
+    let i = 1;
 
-    const $removeBtn = document.querySelector(".card__remove");
-    const $addBtn = document.querySelector(".card__add");
+    const $removeBtn = document.querySelectorAll(".card__remove");
+    const $addBtn = document.querySelectorAll(".card__add");
 
-    $addBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        console.log(e.target);
-
-        if (e.target.matches("svg.card__add")) {
+    $addBtn.forEach(btn => {
+        btn.addEventListener("click", (e) => {
             i++;
-            $numItems.value = i;
-            // console.log(`algo ${$numItems.value = i}`);
-        }
-
-        console.log(i);
-
+            btn.previousElementSibling.value = i;
+        });
     })
 
-    $removeBtn.addEventListener("click", (e) => {
-        // e.preventDefault();
-        console.log(e.target);
+    $removeBtn.forEach(btn => {
 
-        if (e.target.matches("svg.card__remove")) {
+        btn.addEventListener("click", (e) => {
 
             if (i > 1) {
                 i--;
-                $numItems.value = i;
+                btn.nextElementSibling.value = i;
             }
-        }
-
-        console.log(i);
-
-    })
+        });
+    });
 
 }
