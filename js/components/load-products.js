@@ -1,35 +1,7 @@
-export function loadAllProducts() {
+export default function loadAllProducts() {
 
     fetchData("/products.json");
 }
-
-
-
-// export function selectCategory() {
-
-//     const $categoryBtn = document.querySelectorAll(".category");
-
-//     $categoryBtn.forEach(btn => {
-//         btn.addEventListener("click", (e) => {
-
-//             $categoryBtn.forEach(btn => btn.lastElementChild.classList.remove("category__type--active"));
-//             e.currentTarget.lastElementChild.classList.add("category__type--active");
-
-//             if (e.currentTarget.id != "todo") {
-//                 const productsBtn = products.filter(product => product.categoria.id === e.currentTarget.id);
-
-
-//                 loadProducts(productsBtn);
-//             } else {
-//                 loadProducts(products);
-//             }
-
-
-//         });
-//     });
-// }
-
-
 
 async function fetchData(url) {
     try {
