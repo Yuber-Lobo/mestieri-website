@@ -1,6 +1,6 @@
 export default function loadAllProducts() {
 
-    fetchData("/products.json");
+    fetchData("../products.json");
 }
 
 async function fetchData(url) {
