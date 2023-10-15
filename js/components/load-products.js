@@ -1,6 +1,6 @@
 export default function loadAllProducts() {
 
-    fetchData("../products.json");
+    fetchData("https://raw.githubusercontent.com/Yuber-Lobo/mestieri-website/gh-pages/products.json");
 }
 
 async function fetchData(url) {
