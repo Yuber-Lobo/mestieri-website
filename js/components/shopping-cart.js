@@ -1,37 +1,25 @@
 const $numItems = document.querySelector(".card__num-items");
 
+let cart = [];
+
 export function addCart() {
 
-    const $addCardBtn = document.querySelectorAll(".card__add-cart-btn");
-    const $quantityBtn = document.querySelectorAll(".card__quantity-btn");
+    let parentElement, nextBrother, previousBrother;
 
-    let nextBrother, previousBrother;
+    document.addEventListener("click", (e) => {
 
-    $quantityBtn.forEach(btn => {
+        if (e.target.matches(".card__add-cart-btn *")) {
 
-        btn.addEventListener("click", (e) => {
-            e.preventDefault();
-        });
+            parentElement = e.target.parentElement;
 
-    });
+            parentElement.classList.add("card__add-cart-btn--hidden")
 
-    // Activar la opción de numero de productos
-    $addCardBtn.forEach(btn => {
+            parentElement.nextElementSibling.classList.remove("card__quantity-btn--hidden")
 
-        btn.addEventListener("click", (e) => {
-            e.preventDefault();
-
-            if (e.currentTarget.matches(".card__add-cart-btn")) {
-
-                btn.classList.add("card__add-cart-btn--hidden");
-
-                nextBrother = btn.nextElementSibling;
-                nextBrother.classList.remove("card__quantity-btn--hidden");
-                nextBrother.children[1].value = 1;
-            }
-        });
+        }
 
     });
+
 
 }
 

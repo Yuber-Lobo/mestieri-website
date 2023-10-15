@@ -20,9 +20,6 @@ async function fetchData(url) {
 function loadProducts(products) {
 
     const $cards = document.querySelector(".cards");
-
-    $cards.innerHTML = "";
-
     const $template = document.getElementById("template-card").content;
     const $fragment = document.createDocumentFragment();
     let $clone;

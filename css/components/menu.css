@@ -97,6 +97,16 @@
 
 @media screen and (min-width: 1024px) {
 
+    .categories__container {
+        overflow-x: hidden;
+        justify-content: space-evenly;
+    }
+
+    .cards {
+        margin: 2rem 0 1rem 0;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     /* .home-menu {
         background-image: linear-gradient(var(--black-alpha-color), var(--black-alpha-color)), url(/assets/images/background-image-4.jpg);
     } */

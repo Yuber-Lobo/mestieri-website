@@ -892,6 +892,12 @@ svg {
     height: auto;
 }
 
+.about__container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+}
+
 .about__span {
     font-weight: var(--font-semi-bold);
     font-style: italic;
@@ -899,9 +905,9 @@ svg {
 }
 
 .about__paragraph {
-    font-weight: var(--font-bold);
+    font-weight: var(--font-semi-bold);
     font-style: normal;
-    text-align: center;
+    text-align: left;
 }
 
 .contact__info {
@@ -1058,5 +1064,9 @@ svg {
     .home__img {
         /* backdrop-filter: blur(10px);
         transform: scaleX(-1); */
+    }
+
+    .footer {
+        margin-bottom: 0;
     }
 }

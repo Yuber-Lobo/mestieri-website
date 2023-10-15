@@ -13,10 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentPath === menuPath) {
         loadAllProducts();
         selectCategory();
+        addCart();
     }
 
     menu();
     quantityItems();
-    addCart();
     selectColor();
 })
+
