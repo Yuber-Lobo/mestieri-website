@@ -97,14 +97,14 @@
                 <a class="home__btn link_to_btn link_to_btn--dark" href="menu.html">Ordena Ahora</a>
             </div>
             <figure class="home__figure">
-                <img class="home__img" src="assets/images/logo-mestieri.jpg" alt="">
+                <img class="home__img" src="assets/images/logos/logo-mestieri.jpg" alt="">
             </figure>
 
         </section>
 
         <section id="productos" class="products section_padding">
 
-            <article class="products__popular container_max-width">
+            <!-- <article class="products__popular container_max-width">
                 <h2 class="section__title">Mas populares</h2>
 
                 <div>
@@ -160,10 +160,11 @@
 
                 </div>
 
-            </article>
+            </article> -->
 
             <article class="products__others container_max-width">
-                <h2 class="section__title">Otros Productos</h2>
+                <h2 class="products__title section__title text-lg-center">Productos Populares</h2>
+                <h3 class="section__title text-lg-center">Comida Rápida</h3>
                 <div class="slider">
                     <div class="slider__slide">
                         <img class="slider__img" src="assets/images/products/hamburguesa-de-pollo.jpg" alt="">
@@ -205,10 +206,11 @@
 
         </section>
 
-        <section id="acerca" class="about section_padding hero-image" data-opacity-color="var(--white-alpha-color)"
-            data-url="url('assets/images/acerca.jpg')" data-attachment="scroll">
-            <article class="about__container container_max-width">
-                <h2 class="section__title">Acerca de <span class="about__span">Mestieri</span></h2>
+        <section id="acerca" class="about">
+
+            <article class="about__container hero-image"
+                style="--hero-image-url: url('/assets/images/acerca.jpg'); --hero-attachment: fixed; --hero-opacity-color: var(--black-alpha-color);">
+                <h2 class="section__title">Acerca de <i>Mestieri</i></h2>
 
                 <p class="about__paragraph">
                     En Mestieri, nos apasiona ofrecer una experiencia culinaria única y deliciosa. Desde nuestros
@@ -228,9 +230,9 @@
                 <p class="about__paragraph">
                     ¡Gracias por ser parte de nuestra historia y apoyarnos en nuestro viaje gastronómico!
                 </p>
-                <figure class="about__figure">
+                <!-- <figure class="about__figure">
                     <img class="about_img" src="assets/images/acerca.jpg" alt="">
-                </figure>
+                </figure> -->
             </article>
 
         </section>
@@ -238,6 +240,74 @@
         <section id="contacto" class="contact section_padding">
 
             <article class="container_max-width">
+                <!-- <h2 class="section__title">Información de Contacto</h2> -->
+                <ul class="contact__info">
+                    <li class="contact__items">
+                        <!-- <h2 class="contact__subtitle section__title"><i>Mestieri</i></h2> -->
+                        <figure class="contact__logo">
+                            <img src="assets/images/logos/logo.svg" alt="">
+                        </figure>
+                        <div class="contact__social-media">
+                            <img class="contact__icons" src="assets/icons/facebook.svg" alt="">
+                            <img class="contact__icons" src="assets/icons/instagram.svg" alt="">
+                            <img class="contact__icons" src="assets/icons/whatsapp.svg" alt="">
+                        </div>
+                    </li>
+
+                    <li class="contact__items">
+                        <h2>Contáctenos</h2>
+
+                        <div class="contact__contacts">
+                            <svg class="contact__icons icons" xmlns="http://www.w3.org/2000/svg" height="48"
+                                viewBox="0 -960 960 960" width="48">
+                                <path
+                                    d="M480.089-490Q509-490 529.5-510.589q20.5-20.588 20.5-49.5Q550-589 529.411-609.5q-20.588-20.5-49.5-20.5Q451-630 430.5-609.411q-20.5 20.588-20.5 49.5Q410-531 430.589-510.5q20.588 20.5 49.5 20.5ZM480-80Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Z" />
+                            </svg>
+                            <h4 class="text-center text-lg-left">Calle 3 #7e-54 Quinta Oriental, Cúcuta, Colombia</h4>
+                        </div>
+
+                        <div class="contact__contacts">
+                            <svg class="contact__icons icons" xmlns="http://www.w3.org/2000/svg" height="48"
+                                viewBox="0 -960 960 960" width="48">
+                                <path
+                                    d="M795-120q-116 0-236.5-56T335-335Q232-438 176-558.5T120-795q0-19 13-32t32-13h140q14 0 24 10t14 25l27 126q2 14-.5 25.5T359-634L259-533q26 44 55 82t64 72q37 38 78 69.5t86 55.5l95-98q10-11 23-15t26-2l119 26q15 4 25 16t10 27v135q0 19-13 32t-32 13Z" />
+                            </svg>
+                            <h4 class="text-center">320 8757467</h4>
+                        </div>
+
+                        <div class="contact__contacts">
+                            <svg class="contact__icons icons" xmlns="http://www.w3.org/2000/svg" height="48"
+                                viewBox="0 -960 960 960" width="48">
+                                <path
+                                    d="M140-160q-24 0-42-18t-18-42v-520q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H140Zm340-302L140-685v465h680v-465L480-462Zm0-60 336-218H145l335 218ZM140-685v-55 520-465Z" />
+                            </svg>
+                            <h4 class="text-center">mestierifastfood@gmail.com</h4>
+                        </div>
+                    </li>
+
+                    <li class="contact__items">
+                        <h2 class="text-center section__title">Horario de Atención</h2>
+                        <div class="contact__contacts">
+                            <svg class="contact__icons icons" xmlns="http://www.w3.org/2000/svg" height="48"
+                                viewBox="0 -960 960 960" width="48">
+                                <path
+                                    d="m627-287 45-45-159-160v-201h-60v225l174 181ZM480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-82 31.5-155t86-127.5Q252-817 325-848.5T480-880q82 0 155 31.5t127.5 86Q817-708 848.5-635T880-480q0 82-31.5 155t-86 127.5Q708-143 635-111.5T480-80Z" />
+                            </svg>
+                            <h4>Lunes a Domingo </h4>
+                        </div>
+                        <div class="contact__contacts">
+                            <svg class="contact__icons icons" xmlns="http://www.w3.org/2000/svg" height="24"
+                                viewBox="0 -960 960 960" width="24">
+                                <path
+                                    d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Z" />
+                            </svg>
+                            <h4>4:00 p.m a 11:00 p.m </h4>
+                        </div>
+
+                    </li>
+                </ul>
+            </article>
+            <!-- <article class="container_max-width">
                 <h2 class="section__title">Información de Contacto</h2>
                 <ul class="contact__info">
                     <li class="contact__items">
@@ -290,7 +360,7 @@
                         <span>Lunes a Domingo de 4:00 p.m a 11:00 p.m</span>
                     </li>
                 </ul>
-            </article>
+            </article> -->
 
         </section>
 
