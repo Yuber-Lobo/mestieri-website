@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components/shopping-cart.css">
-    <title>Document</title>
+    <title>Carrito de Compras</title>
 </head>
 
 <body>
 
-    <main class="main">
+    <main class="main-cart">
 
         <section class="header-cart">
 
@@ -34,11 +34,11 @@
 
                 <thead class="table-cart__header">
                     <tr class="table-cart__column-headers">
-                        <th class="table-cart__header">Producto</th>
-                        <th class="table-cart__header">Nombre</th>
-                        <th class="table-cart__header">Precio</th>
-                        <th class="table-cart__header">Cantidad</th>
-                        <th class="table-cart__header">Total</th>
+                        <th class="table-cart__title-header">Producto</th>
+                        <th class="table-cart__title-header">Nombre</th>
+                        <th class="table-cart__title-header">Precio</th>
+                        <th class="table-cart__title-header">Cantidad</th>
+                        <th class="table-cart__title-header">Total</th>
                     </tr>
 
                 </thead>
@@ -46,19 +46,23 @@
                 <tbody class="table-cart__body">
 
                     <tr class="table-cart__row-content">
+
                         <td class="table-cart__data">
                             <img class="table-cart__img" src="assets/images/products/hamburguesa-la-fundadora.jpg"
                                 alt="Hamburguesa la Fundadora">
                         </td>
+
                         <td class="table-cart__data">
                             <div class="table-cart__text">
                                 <h4>Hamburguesa La Fundadora</h4>
-                                <h5>$ 15.000</h5>
+                                <h5 class="price-by-unit">$ 15.000</h5>
                             </div>
                         </td>
+
                         <td class="table-cart__data">
-                            <h4>15.000</h4>
+                            <h4>$ 15.000</h4>
                         </td>
+
                         <td class="table-cart__data">
                             <div class="table-cart__quantity card__quantity-btn">
                                 <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48"
@@ -72,25 +76,30 @@
                                 </svg>
                             </div>
                         </td>
+
                         <td class="table-cart__data ">
-                            <h4>15.000</h4>
+                            <h4>$ 15.000</h4>
                         </td>
                     </tr>
 
                     <tr class="table-cart__row-content">
+
                         <td class="table-cart__data">
                             <img class="table-cart__img" src="assets/images/products/hamburguesa-la-fundadora.jpg"
                                 alt="Hamburguesa la Fundadora">
                         </td>
+
                         <td class="table-cart__data">
                             <div class="table-cart__text">
                                 <h4>Hamburguesa La Fundadora</h4>
-                                <h5>$ 15.000</h5>
+                                <h5 class="price-by-unit">$ 15.000</h5>
                             </div>
                         </td>
+
                         <td class="table-cart__data">
-                            <h4>15.000</h4>
+                            <h4>$ 15.000</h4>
                         </td>
+
                         <td class="table-cart__data">
                             <div class="table-cart__quantity card__quantity-btn">
                                 <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48"
@@ -104,25 +113,32 @@
                                 </svg>
                             </div>
                         </td>
+
                         <td class="table-cart__data ">
-                            <h4>15.000</h4>
+                            <h4>$ 15.000</h4>
                         </td>
                     </tr>
 
                 </tbody>
+
+                <tfoot class="table-cart__footer">
+                    <tr class="payment_summary">
+
+                        <td class="table-cart__data--hidden" colspan="2"></td>
+                        <td class="total_to_pay" colspan="3">
+                            <a href="#" class="go-to-pay-btn link_to_btn link_to_btn--light">
+                                <h2>Ir a pagar</h2>
+                                <div class="total_purchase">
+                                    <h4>SubTotal</h4>
+                                    <h3>$0.0</h3>
+                                </div>
+                            </a>
+                        </td>
+
+                    </tr>
+                </tfoot>
+
             </table>
-        </section>
-
-        <section class="purchase-data-cart">
-
-            <div class="purchase-data-cart__subtotal-info">
-                <h3>Subtotal</h3>
-                <h2>$14000</h2>
-            </div>
-
-            <a href="#" class="purchase-data-cart__pay-btn link_to_btn link_to_btn--light">
-                Comprar
-            </a>
         </section>
 
     </main>
