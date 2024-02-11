@@ -1,3 +1,4 @@
+import includeHTML from "./components/include-html.js";
 import loadAllProducts from "./components/load-products.js";
 import menu from "./components/menu.js";
 import selectCategory from "./components/select-category.js";
@@ -15,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         selectCategory();
         addCart();
     }
-
+    includeHTML();
     menu();
     quantityItems();
     selectColor();
