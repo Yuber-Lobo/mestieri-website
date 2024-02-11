@@ -9,10 +9,10 @@
 
             <nav class="nav">
                 <ul class="nav__sections">
-                    <li class="nav__items"><a class="nav__link" href="index.html/#inicio">Inicio</a></li>
-                    <li class="nav__items"><a class="nav__link" href="index.html/#productos">Productos</a></li>
-                    <li class="nav__items"><a class="nav__link" href="index.html/#acerca">Acerca</a></li>
-                    <li class="nav__items"><a class="nav__link" href="index.html/#contacto">Contacto</a></li>
+                    <li class="nav__items"><a class="nav__link" href="index.html#inicio">Inicio</a></li>
+                    <li class="nav__items"><a class="nav__link" href="index.html#productos">Productos</a></li>
+                    <li class="nav__items"><a class="nav__link" href="index.html#acerca">Acerca</a></li>
+                    <li class="nav__items"><a class="nav__link" href="index.html#contacto">Contacto</a></li>
                     <li class="nav__items"><a class="nav__link nav__link-svg" href="menu.html">Menu
                             <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                                 width="48">

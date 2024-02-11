@@ -11,12 +11,12 @@ export default function menu() {
             $menuBtn.lastElementChild.classList.toggle("menu_close--hidden");
         }
 
-        if (e.target.matches(".nav__link")) {
-            $menu.classList.remove("nav--active");
-            $menuBtn.firstElementChild.classList.remove("menu_bars--hidden")
-            $menuBtn.lastElementChild.classList.add("menu_close--hidden");
+        // if (e.target.matches(".nav__link")) {
+        //     $menu.classList.remove("nav--active");
+        //     $menuBtn.firstElementChild.classList.remove("menu_bars--hidden")
+        //     $menuBtn.lastElementChild.classList.add("menu_close--hidden");
 
-        }
+        // }
 
     });
 

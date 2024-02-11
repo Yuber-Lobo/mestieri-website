@@ -8,71 +8,15 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components/menu.css">
     <title>Mestieri</title>
+
+
+    <script src="js/include-html.js"></script>
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="container_max-width">
-
-            <div class="header__nav">
-                <div class="logo">
-                    <a class="logo__text" href="index.html">Mestieri</a>
-                </div>
-
-                <nav class="nav">
-                    <ul class="nav__sections">
-                        <li class="nav__items"><a class="nav__link" href="index.html#inicio">Inicio</a></li>
-                        <li class="nav__items"><a class="nav__link" href="index.html#productos">Productos</a></li>
-                        <li class="nav__items"><a class="nav__link" href="index.html#acerca">Acerca</a></li>
-                        <li class="nav__items"><a class="nav__link" href="index.html#contacto">Contacto</a></li>
-                        <li class="nav__items"><a class="nav__link nav__link-svg" href="menu.html">Menu
-                                <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48"
-                                    viewBox="0 -960 960 960" width="48">
-                                    <path
-                                        d="M220-80q-24 0-42-18t-18-42v-520q0-24 18-42t42-18h110v-10q0-63 43.5-106.5T480-880q63 0 106.5 43.5T630-730v10h110q24 0 42 18t18 42v520q0 24-18 42t-42 18H220Zm170-640h180v-10q0-38-26-64t-64-26q-38 0-64 26t-26 64v10Zm210 180q13 0 21.5-8.5T630-570v-90h-60v90q0 13 8.5 21.5T600-540Zm-240 0q13 0 21.5-8.5T390-570v-90h-60v90q0 13 8.5 21.5T360-540Z" />
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-
-            <div class="header__options">
-                <a href="shopping-cart.html" class="shopping-cart">
-                    <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
-                        width="48">
-                        <path
-                            d="M286.788-81Q257-81 236-102.212q-21-21.213-21-51Q215-183 236.212-204q21.213-21 51-21Q317-225 338-203.788q21 21.213 21 51Q359-123 337.788-102q-21.213 21-51 21Zm400 0Q657-81 636-102.212q-21-21.213-21-51Q615-183 636.212-204q21.213-21 51-21Q717-225 738-203.788q21 21.213 21 51Q759-123 737.788-102q-21.213 21-51 21ZM235-741l110 228h288l125-228H235Zm-30-60h589.074q22.964 0 34.945 21Q841-759 829-738L694-495q-11 19-28.559 30.5Q647.881-453 627-453H324l-56 104h491v60H277q-42 0-60.5-28t.5-63l64-118-152-322H51v-60h117l37 79Zm140 288h288-288Z" />
-                    </svg>
-                </a>
-
-                <div class="header__access">
-                    <div class="log-in log-in--hidden">
-                        <a href="index.html#log-in">Iniciar Sesión</a>
-                    </div>
-
-                    <div class="sign-up link_to_btn link_to_btn--dark log-up--hidden">
-                        <a href="index.html#sign-up">Registrarse</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="menu-btn">
-                <svg class="icons menu_bars" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
-                    width="48">
-                    <path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
-                </svg>
-                <svg class="icons menu_close menu_close--hidden" xmlns="http://www.w3.org/2000/svg" height="48"
-                    viewBox="0 -960 960 960" width="48">
-                    <path
-                        d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
-                </svg>
-            </div>
-
-        </div>
-    </header>
+    <!-- *Header* -->
+    <div data-include="/components/header.xml"></div>
 
     <!-- *Home* -->
     <section class="home-menu">
@@ -652,6 +596,9 @@
         <section class="cards"></section>
 
     </main>
+
+    <!-- *Footer* -->
+    <div data-include="/components/footer.html"></div>
 
     <template id="template-card">
         <div class="card">
