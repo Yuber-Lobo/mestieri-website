@@ -11,7 +11,9 @@ async function fetchData(url) {
         }
         const data = await response.json(); // Esperamos los datos JSON
         loadProducts(data.productos);
-        // console.info(data.productos);
+        loadCategories(data.categorias);
+        filterCategory(data.productos);
+        // console.info(data.categorias);
     } catch (error) {
         console.error('Hubo un error:', error);
     }
@@ -44,6 +46,55 @@ function loadProducts(products) {
 
         $fragment.appendChild($clone);
     });
-
+    $cards.innerHTML = "";
     $cards.appendChild($fragment);
+}
+
+function loadCategories(categories) {
+    const $categories = document.querySelector(".categories__container");
+    const $template = document.getElementById("template-categories").content;
+    const $fragment = document.createDocumentFragment();
+    // Clonar el template una sola vez
+    const $cardTemplate = document.importNode($template, true);
+
+    categories.forEach(category => {
+        const $clone = $cardTemplate.cloneNode(true); // Clonar el nodo del template
+
+        // Acceder a las propiedades del producto usando destructuring
+        const { id, nombre } = category;
+
+        // Modificar los nodos clonados
+        const $category = $clone.querySelector(".category");
+
+        $category.dataset.category = id;
+        $category.querySelector(".category__type").textContent = nombre;
+
+
+        $fragment.appendChild($clone);
+    });
+
+    $categories.appendChild($fragment);
+}
+
+function filterCategory(products) {
+
+    document.addEventListener("click", e => {
+
+        if (e.target.matches("[data-category] *")) {
+
+            const id = e.target.closest("[data-category]").dataset.category;
+
+            const filteredProducts = products.filter(producto => {
+                return producto.categoria.id === id;
+
+            });
+            console.info(filteredProducts);
+            loadProducts(filteredProducts);
+        }
+
+    });
+
+
+
+
 }
