@@ -17,7 +17,6 @@ async function getHTML(el, url) {
         }
 
         const html = await response.text();
-        console.info(html);
         el.outerHTML = html;
 
     } catch (error) {

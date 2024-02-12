@@ -1,0 +1,390 @@
+{
+  "productos": [
+    {
+      "id": "1",
+      "titulo": "Hamburguesa La Fundadora",
+      "puntuacion": "4.8",
+      "descripcion": " Pan brioche 🍔 + Carne 100% de Res 🍣 + Queso mozzarella 🧀 + Cebolla caramelizada 🧅 +  Tocineta 🥓 + Vegetales frescos 🥬🥒 + salsas de la casa. 🍶",
+      "img": "/assets/images/products/hamburguesa-la-fundadora.jpg",
+      "ingredientes": [
+        {
+          "id": "1",
+          "nombre": "Queso mozzarella",
+          "incluido": true
+        },
+        {
+          "id": "2",
+          "nombre": "Cebolla caramelizada",
+          "incluido": true
+        },
+        {
+          "id": "3",
+          "nombre": "Tocineta",
+          "incluido": true
+        },
+        {
+          "id": "4",
+          "nombre": "Vegetales frescos",
+          "incluido": true
+        }
+      ],
+      "categoria": {
+        "id": "1",
+        "nombre": "Hamburguesa"
+      },
+      "precio": "18.000"
+    },
+    {
+      "id": "2",
+      "titulo": "Hot Dog Fundador",
+      "puntuacion": "4.6",
+      "descripcion": " Pan brioche 🥖 + Salchicha Americana 🌭 + Queso mozzarella 🧀 + Queso cheddar 🧀 + Tocineta picada 🥓 + Pepinos encurtidos 🥒 + Salsas de la casa 🥣",
+      "img": "/assets/images/products/hot-dog-fundador.jpg",
+      "ingredientes": [
+        {
+          "id": "5",
+          "nombre": "Queso mozzarella",
+          "incluido": true
+        },
+        {
+          "id": "6",
+          "nombre": "Queso cheddar",
+          "incluido": true
+        },
+        {
+          "id": "7",
+          "nombre": "Tocineta picada",
+          "incluido": true
+        },
+        {
+          "id": "8",
+          "nombre": "Pepinos encurtidos",
+          "incluido": true
+        }
+      ],
+      "categoria": {
+        "id": "2",
+        "nombre": "Hot Dog"
+      },
+      "precio": "16.000"
+    },
+    {
+      "id": "3",
+      "titulo": "Salchipapa Básica Principal",
+      "puntuacion": "4.8",
+      "descripcion": " Papas a la francesa 🍟 + Salchicha Americana 🌭 + Mix de queso mozzarella y cheddar 🧀 + Salsas de la casa 🥣 + Vegetales frescos 🥗",
+      "img": "/assets/images/products/salchipapa-basica-principal.jpg",
+      "ingredientes": [
+        {
+          "id": "9",
+          "nombre": "Queso mozzarella",
+          "incluido": true
+        },
+        {
+          "id": "10",
+          "nombre": "Queso cheddar",
+          "incluido": true
+        }
+      ],
+      "categoria": {
+        "id": "3",
+        "nombre": "Salchipapa"
+      },
+      "precio": "16.000"
+    },
+    {
+      "id": "4",
+      "titulo": "Sandwich De Pollo",
+      "puntuacion": "4.6",
+      "descripcion": " Pan a las finas hiervas🌿🥖 + Pollo Desmenuzado 🍗 + Jamón de cerdo 🐽 + Queso mozzarella 🧀 + Tocineta 🥓 + Huevos de codorniz 🍳 + Vegetales frescos 🥗 + Salsas de la casa 🥣",
+      "img": "/assets/images/products/sandwich-pollo.jpg",
+      "ingredientes": [
+        {
+          "id": "11",
+          "nombre": "Queso mozzarella",
+          "incluido": true
+        },
+        {
+          "id": "12",
+          "nombre": "Tocineta",
+          "incluido": true
+        }
+      ],
+      "categoria": {
+        "id": "4",
+        "nombre": "Sandwich"
+      },
+      "precio": "17.000"
+    },
+    {
+      "id": "5",
+      "titulo": "Papas Cheddar",
+      "puntuacion": "4.6",
+      "descripcion": " Papas a la francesa 🍟 + Queso fundido 🧀 + Tocineta picada 🥓",
+      "img": "/assets/images/products/papas-cheedar.jpg",
+      "ingredientes": [
+        {
+          "id": "13",
+          "nombre": "Queso fundido",
+          "incluido": true
+        },
+        {
+          "id": "7",
+          "nombre": "Tocineta picada",
+          "incluido": true
+        }
+      ],
+      "categoria": {
+        "id": "3",
+        "nombre": "Salchipapa"
+      },
+      "precio": "15.000"
+    },
+    {
+      "id": "6",
+      "titulo": "Hamburguesa Doble Cheese And Bacon",
+      "puntuacion": "4.9",
+      "descripcion": " Pan brioche 🍔 + Doble carne 🍖 + Tocineta 🥓 + Dos tipos de queso 🧀 + Pepinos encurtidos 🥒 + Salsas de la casa 🥣",
+      "img": "/assets/images/products/hamburguesa-doble-cheese-&-bacon.jpg",
+      "ingredientes": [
+        {
+          "id": "1",
+          "nombre": "Tocineta",
+          "incluido": true
+        },
+        {
+          "id": "6",
+          "nombre": "Pepinos encurtidos",
+          "incluido": true
+        }
+      ],
+      "categoria": {
+        "id": "1",
+        "nombre": "Hamburguesa"
+      },
+      "precio": "21.000"
+    },
+    {
+      "id": "7",
+      "titulo": "Vayunas Típicas X 10",
+      "puntuacion": "4.5",
+      "descripcion": "Vayunitas crocantes con un suave relleno de puré de papa 🥔 y carne desmechada 🥩",
+      "img": "",
+      "ingredientes": [],
+      "categoria": {
+        "id": "5",
+        "nombre": "Vayunas"
+      },
+      "precio": "13.000"
+    },
+    {
+      "id": "8",
+      "titulo": "Chicharrón con Yuca",
+      "puntuacion": "4.6",
+      "descripcion": "Chicharrón carnudo 🐽 acompañado de una yuca suave y una salsa especial de cerveza picante 🥣",
+      "img": "",
+      "ingredientes": [
+        {
+          "id": "16",
+          "nombre": "Salsa especial de cerveza picante",
+          "incluido": true
+        },
+        {
+          "id": "17",
+          "nombre": "Yuca",
+          "incluido": true
+        },
+        {
+          "id": "18",
+          "nombre": "Salsa especial de cerveza picante",
+          "incluido": true
+        }
+      ],
+      "categoria": {
+        "id": "6",
+        "nombre": "Chicharrón"
+      },
+      "precio": "18.000"
+    },
+    {
+      "id": "9",
+      "titulo": "Alitas BBQ X 16",
+      "puntuacion": "4.7",
+      "descripcion": "Alitas BBQ en salsa 🍗, acompañadas de papas rústicas a la francesa 🍟",
+      "img": "",
+      "ingredientes": [],
+      "categoria": {
+        "id": "7",
+        "nombre": "Alitas"
+      },
+      "precio": "34.000"
+    },
+    {
+      "id": "10",
+      "titulo": "Alitas BBQ X 8",
+      "puntuacion": "4.6",
+      "descripcion": "Deliciosas alitas 🍗 en salsa BBQ acompañadas de papas rústicas a la francesa 🍟",
+      "img": "",
+      "ingredientes": [],
+      "categoria": {
+        "id": "7",
+        "nombre": "Alitas"
+      },
+      "precio": "18.000"
+    },
+    {
+      "id": "11",
+      "titulo": "Papas Rusticas a la Francesa",
+      "puntuacion": "4.5",
+      "descripcion": "Papas crocantes externas y suaves por dentro dándole una deliciosa combinación con Salsas.🍟",
+      "img": "",
+      "ingredientes": [],
+      "categoria": {
+        "id": "8",
+        "nombre": "Papas"
+      },
+      "precio": "5.000"
+    },
+    {
+      "id": "12",
+      "titulo": "SUPER COMBO 1",
+      "puntuacion": "",
+      "descripcion": "Hamburguesa sencilla más papas rusticas a la francesa y coca Cola 250 ml",
+      "img": "",
+      "ingredientes": [],
+      "categoria": {
+        "id": "9",
+        "nombre": "Combos"
+      },
+      "precio": "18.000"
+    },
+    {
+      "id": "13",
+      "titulo": "SUPER COMBO 3",
+      "puntuacion": "5.0",
+      "descripcion": "Hot dog Fundador más hamburguesa fundadora acompañada de una porción de papas grande y coca Cola 1,5L",
+      "img": "",
+      "ingredientes": [],
+      "categoria": {
+        "id": "9",
+        "nombre": "Combos"
+      },
+      "precio": "42.000"
+    },
+    {
+      "id": "14",
+      "titulo": "SUPER COMBO 2",
+      "puntuacion": "4.9",
+      "descripcion": "Hamburguesa doble carne más papas a la francesa rusticas y coca Cola 250 ml",
+      "img": "",
+      "ingredientes": [],
+      "categoria": {
+        "id": "9",
+        "nombre": "Combos"
+      },
+      "precio": "22.000"
+    },
+    {
+      "id": "15",
+      "titulo": "COCA COLA PET 400ML",
+      "puntuacion": "5.0",
+      "descripcion": "",
+      "img": "",
+      "categoria": {
+        "id": "10",
+        "nombre": "Bebidas"
+      },
+      "precio": "4.500"
+    },
+    {
+      "id": "16",
+      "titulo": "CUATRO TORONJA 1,5L",
+      "puntuacion": "5.0",
+      "descripcion": "",
+      "img": "",
+      "categoria": {
+        "id": "10",
+        "nombre": "Bebidas"
+      },
+      "precio": "7.000"
+    },
+    {
+      "id": "17",
+      "titulo": "COCA COLA 1,5 L",
+      "puntuacion": "5.0",
+      "descripcion": "",
+      "img": "",
+      "categoria": {
+        "id": "10",
+        "nombre": "Bebidas"
+      },
+      "precio": "7.000"
+    },
+    {
+      "id": "18",
+      "titulo": "BOTELLA DE AGUA 600ML",
+      "puntuacion": "5.0",
+      "descripcion": "",
+      "img": "",
+      "categoria": {
+        "id": "10",
+        "nombre": "Bebidas"
+      },
+      "precio": "3.000"
+    },
+    {
+      "id": "19",
+      "titulo": "KOLA ROMÁN 1,5L",
+      "puntuacion": "5.0",
+      "descripcion": "",
+      "img": "",
+      "categoria": {
+        "id": "10",
+        "nombre": "Bebidas"
+      },
+      "precio": "7.000"
+    }
+  ],
+  "categorias": [
+    {
+      "id": "1",
+      "nombre": "Hamburguesa"
+    },
+    {
+      "id": "2",
+      "nombre": "Hot Dog"
+    },
+    {
+      "id": "3",
+      "nombre": "Salchipapa"
+    },
+    {
+      "id": "4",
+      "nombre": "Sandwich"
+    },
+    {
+      "id": "5",
+      "nombre": "Vayunas"
+    },
+    {
+      "id": "6",
+      "nombre": "Chicharrón"
+    },
+    {
+      "id": "7",
+      "nombre": "Alitas"
+    },
+    {
+      "id": "8",
+      "nombre": "Papas"
+    },
+    {
+      "id": "9",
+      "nombre": "Combos"
+    },
+    {
+      "id": "10",
+      "nombre": "Bebidas"
+    }
+  ]
+}
