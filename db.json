@@ -29,8 +29,8 @@
         }
       ],
       "categoria": {
-        "id": "1",
-        "nombre": "Hamburguesa"
+        "id": "2",
+        "nombre": "Hamburguesas"
       },
       "precio": "18.000"
     },
@@ -63,8 +63,8 @@
         }
       ],
       "categoria": {
-        "id": "2",
-        "nombre": "Hot Dog"
+        "id": "3",
+        "nombre": "Hot Dogs"
       },
       "precio": "16.000"
     },
@@ -87,8 +87,8 @@
         }
       ],
       "categoria": {
-        "id": "3",
-        "nombre": "Salchipapa"
+        "id": "4",
+        "nombre": "Salchipapas"
       },
       "precio": "16.000"
     },
@@ -111,8 +111,8 @@
         }
       ],
       "categoria": {
-        "id": "4",
-        "nombre": "Sandwich"
+        "id": "5",
+        "nombre": "Sandwiches"
       },
       "precio": "17.000"
     },
@@ -135,8 +135,8 @@
         }
       ],
       "categoria": {
-        "id": "3",
-        "nombre": "Salchipapa"
+        "id": "4",
+        "nombre": "Salchipapas"
       },
       "precio": "15.000"
     },
@@ -159,8 +159,8 @@
         }
       ],
       "categoria": {
-        "id": "1",
-        "nombre": "Hamburguesa"
+        "id": "2",
+        "nombre": "Hamburguesas"
       },
       "precio": "21.000"
     },
@@ -172,7 +172,7 @@
       "img": "",
       "ingredientes": [],
       "categoria": {
-        "id": "5",
+        "id": "6",
         "nombre": "Vayunas"
       },
       "precio": "13.000"
@@ -201,8 +201,8 @@
         }
       ],
       "categoria": {
-        "id": "6",
-        "nombre": "Chicharrón"
+        "id": "7",
+        "nombre": "Chicharrones"
       },
       "precio": "18.000"
     },
@@ -214,7 +214,7 @@
       "img": "",
       "ingredientes": [],
       "categoria": {
-        "id": "7",
+        "id": "8",
         "nombre": "Alitas"
       },
       "precio": "34.000"
@@ -227,7 +227,7 @@
       "img": "",
       "ingredientes": [],
       "categoria": {
-        "id": "7",
+        "id": "8",
         "nombre": "Alitas"
       },
       "precio": "18.000"
@@ -240,7 +240,7 @@
       "img": "",
       "ingredientes": [],
       "categoria": {
-        "id": "8",
+        "id": "9",
         "nombre": "Papas"
       },
       "precio": "5.000"
@@ -253,7 +253,7 @@
       "img": "",
       "ingredientes": [],
       "categoria": {
-        "id": "9",
+        "id": "10",
         "nombre": "Combos"
       },
       "precio": "18.000"
@@ -266,7 +266,7 @@
       "img": "",
       "ingredientes": [],
       "categoria": {
-        "id": "9",
+        "id": "10",
         "nombre": "Combos"
       },
       "precio": "42.000"
@@ -279,7 +279,7 @@
       "img": "",
       "ingredientes": [],
       "categoria": {
-        "id": "9",
+        "id": "10",
         "nombre": "Combos"
       },
       "precio": "22.000"
@@ -291,7 +291,7 @@
       "descripcion": "",
       "img": "",
       "categoria": {
-        "id": "10",
+        "id": "11",
         "nombre": "Bebidas"
       },
       "precio": "4.500"
@@ -303,7 +303,7 @@
       "descripcion": "",
       "img": "",
       "categoria": {
-        "id": "10",
+        "id": "11",
         "nombre": "Bebidas"
       },
       "precio": "7.000"
@@ -315,7 +315,7 @@
       "descripcion": "",
       "img": "",
       "categoria": {
-        "id": "10",
+        "id": "11",
         "nombre": "Bebidas"
       },
       "precio": "7.000"
@@ -327,7 +327,7 @@
       "descripcion": "",
       "img": "",
       "categoria": {
-        "id": "10",
+        "id": "11",
         "nombre": "Bebidas"
       },
       "precio": "3.000"
@@ -339,51 +339,56 @@
       "descripcion": "",
       "img": "",
       "categoria": {
-        "id": "10",
+        "id": "11",
         "nombre": "Bebidas"
       },
       "precio": "7.000"
     }
   ],
+
   "categorias": [
     {
       "id": "1",
-      "nombre": "Hamburguesa"
+      "nombre": "Todos"
     },
     {
       "id": "2",
-      "nombre": "Hot Dog"
+      "nombre": "Hamburguesas"
     },
     {
       "id": "3",
-      "nombre": "Salchipapa"
+      "nombre": "Hot Dogs"
     },
     {
       "id": "4",
-      "nombre": "Sandwich"
+      "nombre": "Salchipapas"
     },
     {
       "id": "5",
-      "nombre": "Vayunas"
+      "nombre": "Sandwiches"
     },
     {
       "id": "6",
-      "nombre": "Chicharrón"
+      "nombre": "Vayunas"
     },
     {
       "id": "7",
-      "nombre": "Alitas"
+      "nombre": "Chicharrones"
     },
     {
       "id": "8",
-      "nombre": "Papas"
+      "nombre": "Alitas"
     },
     {
       "id": "9",
-      "nombre": "Combos"
+      "nombre": "Papas"
     },
     {
       "id": "10",
+      "nombre": "Combos"
+    },
+    {
+      "id": "11",
       "nombre": "Bebidas"
     }
   ]

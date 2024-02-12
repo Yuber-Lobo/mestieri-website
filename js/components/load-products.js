@@ -78,23 +78,21 @@ function loadCategories(categories) {
 
 function filterCategory(products) {
 
-    document.addEventListener("click", e => {
+    document.addEventListener("click", handleCategoryClick);
+
+    function handleCategoryClick(e) {
 
         if (e.target.matches("[data-category] *")) {
 
-            const id = e.target.closest("[data-category]").dataset.category;
+            const categoryId = e.target.closest("[data-category]").dataset.category;
 
-            const filteredProducts = products.filter(producto => {
-                return producto.categoria.id === id;
-
-            });
-            console.info(filteredProducts);
-            loadProducts(filteredProducts);
+            if (categoryId !== "1") {
+                const filteredProducts = products.filter(producto => producto.categoria.id === categoryId);
+                // console.info(filteredProducts);
+                loadProducts(filteredProducts);
+            } else {
+                loadProducts(products)
+            }
         }
-
-    });
-
-
-
-
+    }
 }
