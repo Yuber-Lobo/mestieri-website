@@ -654,7 +654,7 @@ svg {
 
 .modal[id="log-in"]:target,
 .modal[id="sign-up"]:target,
-.modal[id="card-1"]:target {
+.modal[id|="card"]:target {
     opacity: 1;
     pointer-events: auto;
 }

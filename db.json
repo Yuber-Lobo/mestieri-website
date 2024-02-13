@@ -290,6 +290,7 @@
       "puntuacion": "5.0",
       "descripcion": "",
       "img": "",
+      "ingredientes": [],
       "categoria": {
         "id": "11",
         "nombre": "Bebidas"
@@ -302,6 +303,7 @@
       "puntuacion": "5.0",
       "descripcion": "",
       "img": "",
+      "ingredientes": [],
       "categoria": {
         "id": "11",
         "nombre": "Bebidas"
@@ -314,6 +316,7 @@
       "puntuacion": "5.0",
       "descripcion": "",
       "img": "",
+      "ingredientes": [],
       "categoria": {
         "id": "11",
         "nombre": "Bebidas"
@@ -326,6 +329,7 @@
       "puntuacion": "5.0",
       "descripcion": "",
       "img": "",
+      "ingredientes": [],
       "categoria": {
         "id": "11",
         "nombre": "Bebidas"
@@ -338,6 +342,7 @@
       "puntuacion": "5.0",
       "descripcion": "",
       "img": "",
+      "ingredientes": [],
       "categoria": {
         "id": "11",
         "nombre": "Bebidas"

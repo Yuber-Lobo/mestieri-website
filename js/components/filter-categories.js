@@ -5,8 +5,8 @@ export default function filterCategory(products) {
     document.addEventListener("click", handleCategoryClick);
 
     function handleCategoryClick(e) {
-
-        if (e.target.matches("[data-category] *")) {
+        // console.info(e.target.closest(".categories__container").classList.contains("categories__container"));
+        if (e.target.matches("[data-category] *") && e.target.closest(".categories__container").classList.contains("categories__container")) {
 
             const categoryId = e.target.closest("[data-category]").dataset.category;
 
