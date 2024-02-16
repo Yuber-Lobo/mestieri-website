@@ -1,4 +1,12 @@
-export default function loadCategories(categories) {
+import { getData } from "./fetch-data.js";
+
+
+const apiUrl = "http://localhost:3000/categorias";
+
+export default async function loadCategories() {
+
+    const categories = await getData(apiUrl);
+
     const $categories = document.querySelector(".categories__container");
     const $template = document.getElementById("template-categories").content;
     const $fragment = document.createDocumentFragment();

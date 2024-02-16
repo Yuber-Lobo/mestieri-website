@@ -120,20 +120,14 @@
         </div>
     </template>
 
-    <template id="template-ingredient">
-        <li class="no-ingredient">
-            <label for=""></label>
-            <input type="checkbox" name="">
-        </li>
-    </template>
-
-
+    <!-- *Template Modal Card* -->
     <template id="template-modal_card">
 
         <article class="modal modal-card">
 
             <div class="modal__content modal-card__content">
 
+                <!-- ?Icon Close -->
                 <a href="#cerrar" class="modal-card__close modal__close">
                     <svg class="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px"
                         height="30px">
@@ -142,9 +136,11 @@
                     </svg>
                 </a>
 
+                <!-- ?Header Modal Card -->
                 <div class="modal-card__header hero-image" style="--hero-opacity-color: var(--black-alpha-color);">
                 </div>
 
+                <!-- ?Body Modal Card -->
                 <div class="modal-card__body card__body">
 
                     <div class="modal-card__body-section-start card__body-section-start">
@@ -189,14 +185,15 @@
                                 viewBox="0 -960 960 960" width="48">
                                 <path d="M200-450v-60h560v60H200Z" />
                             </svg>
-                            <input type="number" data-num-items value="1" class="card__num-items"></input>
+                            <input type="number" value="1" class="card__num-items"></input>
                             <svg class="card__add icons" xmlns="http://www.w3.org/2000/svg" height="48"
                                 viewBox="0 -960 960 960" width="48">
                                 <path d="M450-450H200v-60h250v-250h60v250h250v60H510v250h-60v-250Z" />
                             </svg>
                         </div>
 
-                        <a href="#" class="link_to_btn link_to_btn--light"><span>Agregar</span><span
+                        <a href="#"
+                            class="modal-card__add-cart-btn link_to_btn link_to_btn--light"><span>Agregar</span><span
                                 class="card__value-total"></span></a>
                         <!-- <a href="#" class="link_to_btn link_to_btn--light">Comprar</a> -->
                     </div>
@@ -207,88 +204,13 @@
         </article>
     </template>
 
-
-    <article class="modal modal-card" id="card-1">
-
-        <div class="modal__content modal-card__content">
-
-            <a href="#cerrar" class="modal-card__close modal__close">
-                <svg class="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px">
-                    <path
-                        d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z" />
-                </svg>
-            </a>
-
-            <div class="modal-card__header hero-image"
-                style="--hero-image-url: url('/assets/images/products/hamburguesa-la-fundadora.jpg'); --hero-opacity-color: var(--black-alpha-color);">
-            </div>
-
-            <div class="modal-card__body card__body">
-
-                <div class="modal-card__body-section-start card__body-section-start">
-                    <h3 class="modal-card__title card__title">Hamburguesa La Fundadora</h3>
-                    <div class="modal-card__rating card__rating">
-                        <svg class="modal-card__icon card__icon icons" xmlns="http://www.w3.org/2000/svg" height="48"
-                            viewBox="0 -960 960 960" width="48">
-                            <path
-                                d="m233-80 65-281L80-550l288-25 112-265 112 265 288 25-218 189 65 281-247-149L233-80Z" />
-                        </svg>
-                        <span class="modal-card__score card__score">4.9</span>
-                    </div>
-                </div>
-
-                <p class="modal-card__description card__description">
-                    Pan brioche 🍔 + Carne 100% de Res 🍣 + Queso mozzarella 🧀 + Cebolla caramelizada
-                    🧅 +
-                    Tocineta 🥓 + Vegetales frescos 🥬🥒 + salsas de la casa. 🍶
-                </p>
-
-                <div class="modal-card__body-section-end card__body-section-end">
-                    <h4 class="modal-card__price card__price">COP $15.000</h4>
-
-                    <button class="modal-card__add-cart-btn card__add-cart-btn modal-card__ card__add-cart-btn--hidden">
-                        <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
-                            width="48">
-                            <path
-                                d="M465-613v-123H341v-60h124v-123h60v123h123v60H525v123h-60ZM289.788-80Q260-80 239-101.212q-21-21.213-21-51Q218-182 239.212-203q21.213-21 51-21Q320-224 341-202.788q21 21.213 21 51Q362-122 340.788-101q-21.213 21-51 21Zm404 0Q664-80 643-101.212q-21-21.213-21-51Q622-182 643.212-203q21.213-21 51-21Q724-224 745-202.788q21 21.213 21 51Q766-122 744.788-101q-21.213 21-51 21ZM290-287q-42 0-61.5-34t.5-69l61-111-150-319H62v-60h116l170 364h292l156-280 52 28-153 277q-9.362 16.667-24.681 25.833Q655-456 634-456H334l-62 109h494v60H290Z" />
-                        </svg>
-                    </button>
-
-                </div>
-
-                <ul class="customize-purchase">
-                    <li class="no-ingredient"><label for="qm">Sin queso mozzarella</label> <input type="checkbox"
-                            name="sin" id="qm"></li>
-                    <li class="no-ingredient"><label for="cc">Sin cebolla caramelizada</label> <input type="checkbox"
-                            name="sin" id="cc"></li>
-                    <li class="no-ingredient"><label for="sv">Sin vegetales</label> <input type="checkbox" name="sin"
-                            id="sv"></li>
-
-
-                </ul>
-
-                <div class="modal-card__cart-btn">
-
-                    <div class="modal-card__quantity-btn card__quantity-btn link_to_btn">
-                        <svg class="card__remove icons" xmlns="http://www.w3.org/2000/svg" height="48"
-                            viewBox="0 -960 960 960" width="48">
-                            <path d="M200-450v-60h560v60H200Z" />
-                        </svg>
-                        <input type="number" data-num-items value="1" class="card__num-items"></input>
-                        <svg class="card__add icons" xmlns="http://www.w3.org/2000/svg" height="48"
-                            viewBox="0 -960 960 960" width="48">
-                            <path d="M450-450H200v-60h250v-250h60v250h250v60H510v250h-60v-250Z" />
-                        </svg>
-                    </div>
-
-                    <a href="#" class="link_to_btn link_to_btn--light"><span>Agregar</span> <span>$15.000</span></a>
-                    <!-- <a href="#" class="link_to_btn link_to_btn--light">Comprar</a> -->
-                </div>
-            </div>
-
-        </div>
-
-    </article>
+    <!-- *Template Ingredients* -->
+    <template id="template-ingredient">
+        <li class="no-ingredient">
+            <label for=""></label>
+            <input type="checkbox" name="">
+        </li>
+    </template>
 
     <script type="module" src="js/script.js"></script>
 </body>

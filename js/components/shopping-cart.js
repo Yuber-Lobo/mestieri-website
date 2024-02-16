@@ -1,50 +1,40 @@
-const $numItems = document.querySelector(".card__num-items");
+import { updateQuantity } from "./fetch-data.js";
+const apiUrl = "http://localhost:3000/productos";
 
-let cart = [];
+// document.addEventListener("click", handleOnClick);
 
-export function addCart() {
-
-    let parentElement, nextBrother, previousBrother;
-
-    document.addEventListener("click", (e) => {
-
-        if (e.target.matches(".card__add-cart-btn *")) {
-
-            parentElement = e.target.parentElement;
-
-            parentElement.classList.add("card__add-cart-btn--hidden")
-
-            parentElement.nextElementSibling.classList.remove("card__quantity-btn--hidden")
-
-        }
-
-    });
-
+export function handleOnClick(e) {
+    quantityItems(e);
+    // updateQuantity(e);
 
 }
 
-export function quantityItems() {
-    let i = 1;
+let cant = 0;
+export async function quantityItems(e) {
+    const quantityBtn = e.target.parentElement;
+    if (quantityBtn.classList.contains("modal-card__quantity-btn")) {
+        const $input = quantityBtn.querySelector(".card__num-items");
+        cant = parseInt($input.value); // Obtener el valor actual del input
 
-    const $removeBtn = document.querySelectorAll(".card__remove");
-    const $addBtn = document.querySelectorAll(".card__add");
+        if (e.target.matches(".card__add")) {
+            cant++; // Incrementar el valor
+            $input.value = cant; // Asignar el nuevo valor al input
+        }
 
-    $addBtn.forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            i++;
-            btn.previousElementSibling.value = i;
-        });
-    })
-
-    $removeBtn.forEach(btn => {
-
-        btn.addEventListener("click", (e) => {
-
-            if (i > 1) {
-                i--;
-                btn.nextElementSibling.value = i;
+        if (e.target.matches(".card__remove")) {
+            if (cant >= 2) {
+                cant--; // Decrementar el valor
+                $input.value = cant; // Asignar el nuevo valor al input
             }
-        });
-    });
+        }
+    }
 
+    if (e.target.matches(".modal-card__add-cart-btn *")) {
+
+        // e.preventDefault();
+
+        const productId = e.target.closest(".modal-card__add-cart-btn").dataset.productId;
+
+        await updateQuantity(apiUrl, productId, cant);
+    }
 }
