@@ -79,7 +79,7 @@ function createCard(product) {
 
 function createModalCard(product) {
 
-    const { id, img, titulo, puntuacion, descripcion, precio, ingredientes } = product;
+    const { id, img, titulo, puntuacion, descripcion, precio, ingredientes, cantidad } = product;
 
     const $templateCardModal = document.getElementById("template-modal_card").content.cloneNode(true);
     const $clonedNode = document.importNode($templateCardModal, true);
@@ -92,7 +92,8 @@ function createModalCard(product) {
     const $priceValue = $cardModal.querySelector(".modal-card__price .card__value");
     const $totalValue = $cardModal.querySelector(".card__value-total");
     const $customizePurchase = $cardModal.querySelector(".customize-purchase");
-    const $quantityBtn = $cardModal.querySelector(".modal-card__cart-btn .modal-card__add-cart-btn");
+    const $quantityInput = $cardModal.querySelector(".modal-card__quantity-btn .card__num-items");
+    const $btnAddCart = $cardModal.querySelector(".modal-card__cart-btn .modal-card__add-cart-btn");
 
     $cardModal.id = `card-${id}`;
     $heroImage.style.setProperty('--hero-image-url', `url(${img})`);
@@ -100,9 +101,21 @@ function createModalCard(product) {
     $score.textContent = puntuacion;
     $description.textContent = descripcion;
     $priceValue.textContent = precio;
-    $quantityBtn.dataset.productId = id;
-    $totalValue.textContent = `$ ${precio}`;
     $customizePurchase.appendChild(loadIngredientes(ingredientes));
+    $btnAddCart.dataset.productId = id;
+
+    if (cantidad >= 1) {
+        $quantityInput.value = cantidad;
+    }
+
+    if (cantidad > 0) {
+        let price = parseFloat(precio.replace(".", ""));
+        $totalValue.textContent = (price * cantidad).toLocaleString('de-DE');
+
+    } else {
+
+        $totalValue.textContent = precio;
+    }
 
     return $clonedNode;
 }

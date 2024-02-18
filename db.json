@@ -33,7 +33,7 @@
         "nombre": "Hamburguesas"
       },
       "precio": "18.000",
-      "cantidad": 5
+      "cantidad": "0"
     },
     {
       "id": "2",
@@ -414,5 +414,6 @@
       "id": "11",
       "nombre": "Bebidas"
     }
-  ]
+  ],
+  "carrito": []
 }
