@@ -30,14 +30,14 @@ export async function getItem(apiUrl, productId) {
 }
 
 
-export async function createProduct(productData) {
+export async function createItem(apiUrl, data) {
 
     return await fetchJson(apiUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(productData),
+        body: JSON.stringify(data),
     });
 
 }
@@ -65,7 +65,7 @@ export async function updateQuantity(apiUrl, productId, newQuantity) {
 
 }
 
-export async function deleteItem(productId) {
+export async function deleteItem(apiUrl,productId) {
     return await fetchJson(`${apiUrl}/${productId}`, {
         method: 'DELETE',
     });

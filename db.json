@@ -33,7 +33,7 @@
         "nombre": "Hamburguesas"
       },
       "precio": "18.000",
-      "cantidad": "0"
+      "cantidad": "3"
     },
     {
       "id": "2",
@@ -68,7 +68,7 @@
         "nombre": "Hot Dogs"
       },
       "precio": "16.000",
-      "cantidad": 0
+      "cantidad": "2"
     },
     {
       "id": "3",
@@ -415,5 +415,20 @@
       "nombre": "Bebidas"
     }
   ],
-  "carrito": []
+  "carrito": [
+    {
+      "id": "1",
+      "img": "/assets/images/products/hamburguesa-la-fundadora.jpg",
+      "titulo": "Hamburguesa La Fundadora",
+      "precio": "18.000",
+      "cantidad": "3"
+    },
+    {
+      "id": "2",
+      "img": "/assets/images/products/hot-dog-fundador.jpg",
+      "titulo": "Hot Dog Fundador",
+      "precio": "16.000",
+      "cantidad": "2"
+    }
+  ]
 }

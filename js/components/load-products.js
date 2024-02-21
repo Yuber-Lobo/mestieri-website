@@ -108,7 +108,7 @@ function createModalCard(product) {
         $quantityInput.value = cantidad;
     }
 
-    if (cantidad > 0) {
+    if (cantidad >= 1) {
         let price = parseFloat(precio.replace(".", ""));
         $totalValue.textContent = (price * cantidad).toLocaleString('de-DE');
 

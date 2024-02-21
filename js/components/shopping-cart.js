@@ -1,5 +1,6 @@
-import { updateQuantity, getItem } from "./fetch-data.js";
+import { updateQuantity, createItem, getItem, getData, deleteItem } from "./fetch-data.js";
 const apiUrl = "http://localhost:3000/productos";
+const apiUrlCart = "http://localhost:3000/carrito";
 
 
 export function handleOnClick(e) {
@@ -31,7 +32,7 @@ export async function quantityItems(e) {
     }
 }
 
-function addToCart(e) {
+async function addToCart(e) {
 
     if (e.target.closest(".modal-card__add-cart-btn")) {
         e.preventDefault();
@@ -40,15 +41,56 @@ function addToCart(e) {
         const cant = $btn.querySelector('.card__num-items').value;
         const productId = $btn.querySelector(".modal-card__add-cart-btn");
 
-        dataShoppingCart(productId, cant);
+        const data = await getItem(apiUrl, productId.dataset.productId);
+
+        const addCart = {
+            id: data.id,
+            img: data.img,
+            titulo: data.titulo,
+            precio: data.precio,
+            cantidad: cant,
+        }
+
+        // console.info(addCart);
+        const cartItems = await getData(apiUrlCart);
+
+        const existingItem = cartItems.find(item => item.id === addCart.id);
+
+        if (existingItem) {
+
+            dataShoppingCart(productId, cant);
+            
+            
+        } else {
+            
+            dataShoppingCart(productId, cant);
+            createItem(apiUrlCart, addCart);
+        }
+
+        // insertProduct(productId);
     }
 }
+
+async function insertProduct(id) {
+
+
+}
+
 
 async function dataShoppingCart(id, cant) {
 
     const productId = id.dataset.productId;
 
     await updateQuantity(apiUrl, productId, cant);
+
+    if (cant >= 1) {
+
+        await updateQuantity(apiUrlCart, productId, cant);
+
+    } else {
+        await deleteItem(apiUrlCart, productId);
+    }
+
 }
 
 function totalToPay(producto) {
