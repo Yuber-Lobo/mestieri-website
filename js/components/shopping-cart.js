@@ -10,25 +10,25 @@ export function handleOnClick(e) {
 
 export async function quantityItems(e) {
     const target = e.target;
-    const producto = target.closest('.modal-card__body');
+    const productQuantityBtn = target.closest('.product-quantity');
 
-    if (producto) {
+    if (productQuantityBtn) {
 
-        const cantidadInput = producto.querySelector('.card__num-items');
+        const cantidadInput = productQuantityBtn.querySelector('.product-quantity__input');
 
-        if (target.matches(".card__add")) {
+        // product-quantity__add-btn *
+        if (target.matches(".product-quantity__add-btn *")) {
             cantidadInput.value = parseInt(cantidadInput.value) + 1;
-        } else if (target.matches(".card__remove")) {
+        } else if (target.matches(".product-quantity__remove-btn *")) {
             if (parseInt(cantidadInput.value) > 1) {
                 cantidadInput.value = parseInt(cantidadInput.value) - 1;
             } else {
-                const id = producto.querySelector(".modal-card__add-cart-btn");
                 const cant = "0";
-                dataShoppingCart(id, cant);
+                dataShoppingCart(productQuantityBtn, cant);
             }
         }
 
-        totalToPay(producto);
+        totalToPay(productQuantityBtn);
     }
 }
 
@@ -38,7 +38,7 @@ async function addToCart(e) {
         e.preventDefault();
 
         const $btn = e.target.closest(".modal-card__cart-btn");
-        const cant = $btn.querySelector('.card__num-items').value;
+        const cant = $btn.querySelector('.product-quantity__input').value;
         const productId = $btn.querySelector(".modal-card__add-cart-btn");
 
         const data = await getItem(apiUrl, productId.dataset.productId);
@@ -59,26 +59,20 @@ async function addToCart(e) {
         if (existingItem) {
 
             dataShoppingCart(productId, cant);
-            
-            
+
+
         } else {
-            
+
             dataShoppingCart(productId, cant);
             createItem(apiUrlCart, addCart);
         }
 
-        // insertProduct(productId);
     }
-}
-
-async function insertProduct(id) {
-
-
 }
 
 
 async function dataShoppingCart(id, cant) {
-
+    //recuerda asignar id
     const productId = id.dataset.productId;
 
     await updateQuantity(apiUrl, productId, cant);
@@ -88,18 +82,21 @@ async function dataShoppingCart(id, cant) {
         await updateQuantity(apiUrlCart, productId, cant);
 
     } else {
+        //Toca actualizar el carrito
         await deleteItem(apiUrlCart, productId);
     }
 
 }
 
-function totalToPay(producto) {
-    const cantidadInput = producto.querySelector('.card__num-items');
-    const precioTotalElemento = producto.querySelector('.card__value-total');
-    const precioUnitario = parseFloat(producto.querySelector('.card__price .card__value').innerText.replace(".", ""));
+function totalToPay(product) {
+    const cantidadInput = product.querySelector('.product-quantity__input');//input
+    console.info(product.nextElementSibling);
+    const precioTotalElemento = product.nextElementSibling.querySelector(".total-value");
+    const price = product.dataset.price;
+    const parsedPrice = parseFloat(price.replace(".", ""));
 
     const cantidad = parseInt(cantidadInput.value);
-    const precioTotal = precioUnitario * cantidad;
+    const precioTotal = parsedPrice * cantidad;
     precioTotalElemento.innerText = precioTotal.toLocaleString('de-DE');
 
 }

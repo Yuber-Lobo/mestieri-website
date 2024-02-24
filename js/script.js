@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         loadCategories();
         loadProducts();
-        document.addEventListener("click", handleOnClick);
         getValueInput();
     }
+    document.addEventListener("click", handleOnClick);
     loadShoppingCart();
     menu();
     selectColor();

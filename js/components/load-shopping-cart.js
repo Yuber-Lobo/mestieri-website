@@ -18,12 +18,15 @@ export default async function loadShoppingCart() {
         const $img = $row.querySelector(".table-cart__img");
         const $title = $row.querySelector(".table-cart__title");
         const $price = $row.querySelector(".table-cart__price-by-unit");
-        const $quantity = $row.querySelector(".table-cart__num-items");
-        const $totalValue = $row.querySelector(".card__value-total");
+        const $quantityBtn = $row.querySelector(".product-quantity");
+        const $quantity = $row.querySelector(".product-quantity__input");
+        const $totalValue = $row.querySelector(".total-value");
 
         const { id, img, titulo, precio, cantidad } = product;
 
         $row.dataset.producId = id;
+        $quantityBtn.dataset.productId = id;
+        $quantityBtn.dataset.price = precio;
         $img.src = img;
         $img.alt = titulo;
         $title.textContent = titulo;

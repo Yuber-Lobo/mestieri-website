@@ -92,7 +92,8 @@ function createModalCard(product) {
     const $priceValue = $cardModal.querySelector(".modal-card__price .card__value");
     const $totalValue = $cardModal.querySelector(".card__value-total");
     const $customizePurchase = $cardModal.querySelector(".customize-purchase");
-    const $quantityInput = $cardModal.querySelector(".modal-card__quantity-btn .card__num-items");
+    const $quantityBtn = $cardModal.querySelector(".product-quantity");
+    const $quantityInput = $cardModal.querySelector(".product-quantity .product-quantity__input");
     const $btnAddCart = $cardModal.querySelector(".modal-card__cart-btn .modal-card__add-cart-btn");
 
     $cardModal.id = `card-${id}`;
@@ -102,6 +103,8 @@ function createModalCard(product) {
     $description.textContent = descripcion;
     $priceValue.textContent = precio;
     $customizePurchase.appendChild(loadIngredientes(ingredientes));
+    $quantityBtn.dataset.productId = id;
+    $quantityBtn.dataset.price = precio;
     $btnAddCart.dataset.productId = id;
 
     if (cantidad >= 1) {

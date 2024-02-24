@@ -61,6 +61,9 @@
 
     </main>
 
+
+
+
     <!-- *Footer* -->
     <div data-include="/components/footer.html"></div>
 
@@ -168,21 +171,27 @@
 
                     <div class="modal-card__cart-btn">
 
-                        <div class="modal-card__quantity-btn card__quantity-btn link_to_btn">
-                            <svg class="card__remove icons" xmlns="http://www.w3.org/2000/svg" height="48"
-                                viewBox="0 -960 960 960" width="48">
-                                <path d="M200-450v-60h560v60H200Z" />
-                            </svg>
-                            <input type="number" value="1" class="card__num-items"></input>
-                            <svg class="card__add icons" xmlns="http://www.w3.org/2000/svg" height="48"
-                                viewBox="0 -960 960 960" width="48">
-                                <path d="M450-450H200v-60h250v-250h60v250h250v60H510v250h-60v-250Z" />
-                            </svg>
+                        <div class="product-quantity link_to_btn">
+
+                            <button class="product-quantity__remove-btn">
+                                <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48"
+                                    viewBox="0 -960 960 960" width="48">
+                                    <path d="M200-450v-60h560v60H200Z" />
+                                </svg>
+                            </button>
+                            <input type="number" value="1" class="product-quantity__input"></input>
+                            <button class="product-quantity__add-btn">
+                                <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48"
+                                    viewBox="0 -960 960 960" width="48">
+                                    <path d="M450-450H200v-60h250v-250h60v250h250v60H510v250h-60v-250Z" />
+                                </svg>
+                            </button>
+                            
                         </div>
 
                         <a href="#"
                             class="modal-card__add-cart-btn link_to_btn link_to_btn--light"><span>Agregar</span>$<span
-                                class="card__value-total"></span></a>
+                                class="card__value-total total-value"></span></a>
                         <!-- <a href="#" class="link_to_btn link_to_btn--light">Comprar</a> -->
                     </div>
                 </div>

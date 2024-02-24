@@ -443,7 +443,8 @@ svg {
 }
 
 .card__add-cart-btn,
-.card__quantity-btn {
+.card__quantity-btn,
+.product-quantity {
     display: flex;
     align-items: center;
     padding: 0.25rem 0.5rem;
@@ -452,7 +453,8 @@ svg {
     background-color: var(--first-color);
 }
 
-.card__num-items {
+.card__num-items,
+.product-quantity__input {
     text-align: center;
     width: 32px;
     font-weight: var(--font-bold);

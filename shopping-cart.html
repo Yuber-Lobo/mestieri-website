@@ -97,22 +97,26 @@
                 <h4 class="table-cart__price-by-unit"></h4>
             </td>
 
-            <td class="table-cart__data">
-                <div class="table-cart__quantity card__quantity-btn">
-                    <svg class="card__remove icons" xmlns="http://www.w3.org/2000/svg" height="48"
-                        viewBox="0 -960 960 960" width="48">
+            <td class="table-cart__data product-quantity">
+
+                <button class="product-quantity__remove-btn">
+                    <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                        width="48">
                         <path d="M200-450v-60h560v60H200Z" />
                     </svg>
-                    <input type="number" class="table-cart__num-items card__num-items"></input>
-                    <svg class="card__add icons" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                </button>
+                <input type="number" value="1" class="product-quantity__input"></input>
+                <button class="product-quantity__add-btn">
+                    <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
                         width="48">
                         <path d="M450-450H200v-60h250v-250h60v250h250v60H510v250h-60v-250Z" />
                     </svg>
-                </div>
+                </button>
+
             </td>
 
             <td class="table-cart__data ">
-                <h4 class="card__value-total"></h4>
+                <h4 class="total-value"></h4>
             </td>
         </tr>
     </template>
