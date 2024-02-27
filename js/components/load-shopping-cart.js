@@ -1,10 +1,11 @@
 import { getData } from "./fetch-data.js";
+import { CART_API_URL } from "./api-routes.js";
+import { formatPrice } from "./shopping-cart.js";
 
-const apiUrl = "http://localhost:3000/carrito";
 
 export default async function loadShoppingCart() {
 
-    const products = await getData(apiUrl);
+    const products = await getData(CART_API_URL);
 
     const $cartBody = document.querySelector(".table-cart__body");
     const $template = document.getElementById("template-shopping-cart").content;
@@ -30,16 +31,16 @@ export default async function loadShoppingCart() {
         $img.src = img;
         $img.alt = titulo;
         $title.textContent = titulo;
-        $price.textContent = precio;
+        $price.textContent = formatPrice(precio);
         $quantity.value = cantidad;
 
         if (cantidad >= 1) {
-            let price = parseFloat(precio.replace(".", ""));
-            $totalValue.textContent = (price * cantidad).toLocaleString('de-DE');
+
+            $totalValue.textContent = formatPrice(precio * cantidad);
 
         } else {
 
-            $totalValue.textContent = precio;
+            $totalValue.textContent = formatPrice(precio);
         }
 
         $fragment.appendChild($row);
@@ -48,4 +49,6 @@ export default async function loadShoppingCart() {
 
     $cartBody.appendChild($fragment);
 }
+
+
 

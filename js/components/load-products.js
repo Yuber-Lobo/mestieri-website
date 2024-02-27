@@ -1,12 +1,11 @@
 import { getData } from "./fetch-data.js";
-
-
-const apiUrl = "http://localhost:3000/productos";
+import { PRODUCT_API_URL } from "./api-routes.js";
+import { formatPrice } from "./shopping-cart.js";
 
 
 export default async function loadProducts() {
 
-    const products = await getData(apiUrl);
+    const products = await getData(PRODUCT_API_URL);
 
     const $cards = document.querySelector(".cards");
     const $fragment = document.createDocumentFragment();
@@ -72,7 +71,7 @@ function createCard(product) {
     $title.textContent = titulo;
     $score.textContent = puntuacion;
     $description.textContent = descripcion;
-    $value.textContent = precio;
+    $value.textContent = formatPrice(precio);
 
     return $clonedNode;
 }
@@ -101,7 +100,7 @@ function createModalCard(product) {
     $title.textContent = titulo;
     $score.textContent = puntuacion;
     $description.textContent = descripcion;
-    $priceValue.textContent = precio;
+    $priceValue.textContent = formatPrice(precio);
     $customizePurchase.appendChild(loadIngredientes(ingredientes));
     $quantityBtn.dataset.productId = id;
     $quantityBtn.dataset.price = precio;
@@ -109,15 +108,11 @@ function createModalCard(product) {
 
     if (cantidad >= 1) {
         $quantityInput.value = cantidad;
-    }
-
-    if (cantidad >= 1) {
-        let price = parseFloat(precio.replace(".", ""));
-        $totalValue.textContent = (price * cantidad).toLocaleString('de-DE');
+        $totalValue.textContent = formatPrice(precio * cantidad);
 
     } else {
 
-        $totalValue.textContent = precio;
+        $totalValue.textContent = formatPrice(precio);
     }
 
     return $clonedNode;

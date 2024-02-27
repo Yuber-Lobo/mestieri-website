@@ -6,7 +6,7 @@ import filterCategory from "./components/filter-categories.js";
 import menu from "./components/menu.js";
 import selectCategory from "./components/select-category.js";
 import selectColor from "./components/select-color.js";
-import { getValueInput, handleOnClick } from "./components/shopping-cart.js";
+import { getValueInput, shoppingCart } from "./components/shopping-cart.js";
 
 const menuPath = "/menu.html";
 
@@ -18,25 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         loadCategories();
         loadProducts();
-        getValueInput();
     }
-    document.addEventListener("click", handleOnClick);
+    document.addEventListener("click", shoppingCart);
+    getValueInput();
     loadShoppingCart();
     menu();
     selectColor();
 })
 
-// async function menuProducts() {
-//     try {
-//         const data = await getProducts("http://localhost:3000/productos");
-//         console.info(data);
-//         if (data) {
-//             loadProducts(data);
-//             loadCategories(data.categorias);
-//             filterCategory(data.productos);
-//         }
-//     } catch (error) {
-//         console.error('Hubo un error al cargar los productos:', error);
-//     }
-// }
 

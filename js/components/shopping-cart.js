@@ -1,123 +1,122 @@
 import { updateQuantity, createItem, getItem, getData, deleteItem } from "./fetch-data.js";
-const apiUrl = "http://localhost:3000/productos";
-const apiUrlCart = "http://localhost:3000/carrito";
+import { PRODUCT_API_URL, CART_API_URL } from "./api-routes.js";
 
+const BTN_SELECTOR = "";
+const ADD_TO_CART_BTN_SELECTOR = ".modal-card__add-cart-btn";
+const PRODUCT_QUANTITY_BTN_SELECTOR = ".product-quantity";
+const PRODUCT_QUANTITY_INPUT_SELECTOR = ".product-quantity__input";
+const PRODUCT_QUANTITY_BTN_ADD_SELECTOR = ".product-quantity__add-btn";
+const PRODUCT_QUANTITY_BTN_REMOVE_SELECTOR = ".product-quantity__remove-btn";
 
-export function handleOnClick(e) {
-    quantityItems(e);
-    addToCart(e);
-}
+export function shoppingCart(e) {
 
-export async function quantityItems(e) {
     const target = e.target;
-    const productQuantityBtn = target.closest('.product-quantity');
 
-    if (productQuantityBtn) {
-
-        const cantidadInput = productQuantityBtn.querySelector('.product-quantity__input');
-
-        // product-quantity__add-btn *
-        if (target.matches(".product-quantity__add-btn *")) {
-            cantidadInput.value = parseInt(cantidadInput.value) + 1;
-        } else if (target.matches(".product-quantity__remove-btn *")) {
-            if (parseInt(cantidadInput.value) > 1) {
-                cantidadInput.value = parseInt(cantidadInput.value) - 1;
-            } else {
-                const cant = "0";
-                dataShoppingCart(productQuantityBtn, cant);
-            }
-        }
-
-        totalToPay(productQuantityBtn);
+    if (target.closest(PRODUCT_QUANTITY_BTN_SELECTOR)) {
+        quantityItems(target);
+    } else if (target.closest(ADD_TO_CART_BTN_SELECTOR)) {
+        addToCart(target);
     }
+
 }
 
-async function addToCart(e) {
+export async function quantityItems(target) {
 
-    if (e.target.closest(".modal-card__add-cart-btn")) {
-        e.preventDefault();
+    const productQuantityBtn = target.closest(PRODUCT_QUANTITY_BTN_SELECTOR);
+    const quantityInput = productQuantityBtn.querySelector(PRODUCT_QUANTITY_INPUT_SELECTOR);
 
-        const $btn = e.target.closest(".modal-card__cart-btn");
-        const cant = $btn.querySelector('.product-quantity__input').value;
-        const productId = $btn.querySelector(".modal-card__add-cart-btn");
-
-        const data = await getItem(apiUrl, productId.dataset.productId);
-
-        const addCart = {
-            id: data.id,
-            img: data.img,
-            titulo: data.titulo,
-            precio: data.precio,
-            cantidad: cant,
-        }
-
-        // console.info(addCart);
-        const cartItems = await getData(apiUrlCart);
-
-        const existingItem = cartItems.find(item => item.id === addCart.id);
-
-        if (existingItem) {
-
-            dataShoppingCart(productId, cant);
-
-
+    let quantity = parseInt(quantityInput.value);
+    if (target.closest(PRODUCT_QUANTITY_BTN_ADD_SELECTOR)) {
+        quantity++;
+    } else if (target.closest(PRODUCT_QUANTITY_BTN_REMOVE_SELECTOR)) {
+        if (parseInt(quantityInput.value) > 1) {
+            quantity--;
         } else {
-
-            dataShoppingCart(productId, cant);
-            createItem(apiUrlCart, addCart);
+            updateQuantityShoppingCart(productQuantityBtn.dataset.productId, 0);
         }
-
     }
+
+    quantityInput.value = quantity;
+    totalToPay(productQuantityBtn);
+
 }
 
+async function addToCart(target) {
 
-async function dataShoppingCart(id, cant) {
-    //recuerda asignar id
-    const productId = id.dataset.productId;
+    // e.preventDefault();
 
-    await updateQuantity(apiUrl, productId, cant);
+    const $btn = target.closest(".modal-card__cart-btn");
+    const quantity = $btn.querySelector(PRODUCT_QUANTITY_INPUT_SELECTOR).value;
+    const productId = $btn.querySelector(".modal-card__add-cart-btn").dataset.productId;
 
-    if (cant >= 1) {
+    const productData = await getItem(PRODUCT_API_URL, productId);
+    const cartItems = await getData(CART_API_URL);
+    const existingItem = cartItems.find(item => item.id === productData.id);
 
-        await updateQuantity(apiUrlCart, productId, cant);
+    if (existingItem) {
+
+        updateQuantityShoppingCart(productId, quantity);
 
     } else {
+
+        updateQuantityShoppingCart(productId, quantity);
+        const { id, img, titulo, precio } = productData;
+        createItem(CART_API_URL, { id, img, titulo, precio, cantidad: quantity });
+    }
+
+
+}
+
+
+async function updateQuantityShoppingCart(productId, quantity) {
+
+    await updateQuantity(PRODUCT_API_URL, productId, quantity);
+
+    if (quantity >= 1) {
+
+        await updateQuantity(CART_API_URL, productId, quantity);
+
+    } else {
+        await deleteItem(CART_API_URL, productId);
         //Toca actualizar el carrito
-        await deleteItem(apiUrlCart, productId);
     }
 
 }
 
 function totalToPay(product) {
-    const cantidadInput = product.querySelector('.product-quantity__input');//input
-    console.info(product.nextElementSibling);
+    const quantityInput = product.querySelector(PRODUCT_QUANTITY_INPUT_SELECTOR);
+
     const precioTotalElemento = product.nextElementSibling.querySelector(".total-value");
     const price = product.dataset.price;
-    const parsedPrice = parseFloat(price.replace(".", ""));
 
-    const cantidad = parseInt(cantidadInput.value);
-    const precioTotal = parsedPrice * cantidad;
-    precioTotalElemento.innerText = precioTotal.toLocaleString('de-DE');
+    const quantity = parseInt(quantityInput.value);
+    const precioTotal = price * quantity;
+    precioTotalElemento.innerText = formatPrice(precioTotal);
 
 }
 
-//No es necesario
 export function getValueInput() {
 
     document.addEventListener("input", e => {
 
         const target = e.target;
-        const producto = target.closest(".modal-card__cart-btn");
+        const producto = target.closest(PRODUCT_QUANTITY_BTN_SELECTOR);
 
-        if (target.matches('.card__num-items')) {
+        if (target.matches(PRODUCT_QUANTITY_INPUT_SELECTOR)) {
             if (parseInt(target.value) <= 0) {
                 target.value = 1;
-                const id = producto.querySelector(".modal-card__add-cart-btn");
-                const cant = "0";
-                dataShoppingCart(id, cant);
+                const id = target.dataset.productId;
+                // updateQuantityShoppingCart(id, 0);
             }
-            totalToPay(producto);
+
+            if (target.value != "") {
+
+                totalToPay(producto);
+            }
         }
     });
 }
 
+export function formatPrice(price) {
+    return price.toLocaleString('es-ES');
+}
