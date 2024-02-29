@@ -1,5 +1,6 @@
 import { updateQuantity, createItem, getItem, getData, deleteItem } from "./fetch-data.js";
 import { PRODUCT_API_URL, CART_API_URL } from "./api-routes.js";
+import { totalToPay } from "./load-shopping-cart.js";
 
 const BTN_SELECTOR = "";
 const ADD_TO_CART_BTN_SELECTOR = ".modal-card__add-cart-btn";
@@ -37,7 +38,8 @@ export async function quantityItems(target) {
     }
 
     quantityInput.value = quantity;
-    totalToPay(productQuantityBtn);
+    totalProduct(productQuantityBtn);
+    totalToPay();
 
 }
 
@@ -83,7 +85,7 @@ async function updateQuantityShoppingCart(productId, quantity) {
 
 }
 
-function totalToPay(product) {
+function totalProduct(product) {
     const quantityInput = product.querySelector(PRODUCT_QUANTITY_INPUT_SELECTOR);
 
     const precioTotalElemento = product.nextElementSibling.querySelector(".total-value");
@@ -111,9 +113,12 @@ export function getValueInput() {
 
             if (target.value != "") {
 
-                totalToPay(producto);
+                totalProduct(producto);
             }
         }
+
+        totalToPay();
+
     });
 }
 

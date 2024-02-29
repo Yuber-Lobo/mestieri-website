@@ -48,7 +48,24 @@ export default async function loadShoppingCart() {
     });
 
     $cartBody.appendChild($fragment);
+
+    totalToPay();
 }
 
+export function totalToPay() {
 
+    const $items = document.querySelectorAll(".table-cart__row-content");
+    const $totalPurchase = document.getElementById("sub-total");
+    let totalPrice = 0;
 
+    $items.forEach(item => {
+
+        const itemPrice = parseInt((item.querySelector(".total-value").textContent).replace(".", ""));
+
+        totalPrice += itemPrice;
+
+    });
+
+    $totalPurchase.textContent = formatPrice(totalPrice);
+
+}

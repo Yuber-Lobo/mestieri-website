@@ -62,7 +62,7 @@
       ],
       "categoria_id": 3,
       "precio": 16000,
-      "cantidad": 0
+      "cantidad": "4"
     },
     {
       "id": 3,
@@ -365,6 +365,13 @@
       "titulo": "Hamburguesa La Fundadora",
       "precio": 18000,
       "cantidad": "5"
+    },
+    {
+      "id": 2,
+      "img": "/assets/images/products/hot-dog-fundador.jpg",
+      "titulo": "Hot Dog Fundador",
+      "precio": 16000,
+      "cantidad": "4"
     }
   ]
 }

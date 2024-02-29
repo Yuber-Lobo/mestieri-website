@@ -6,10 +6,17 @@ import { formatPrice } from "./shopping-cart.js";
 export default async function loadProducts() {
 
     const products = await getData(PRODUCT_API_URL);
+    createProducts(products);
+
+}
+
+export async function createProducts(products) {
+
+    // const products = await getData(PRODUCT_API_URL);
 
     const $cards = document.querySelector(".cards");
     const $fragment = document.createDocumentFragment();
-    console.info(products);
+
     products.forEach(product => {
 
         const $card = createCard(product);

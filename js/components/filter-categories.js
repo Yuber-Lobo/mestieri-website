@@ -1,22 +1,21 @@
-import loadProducts from "./load-products.js";
+import { getData } from "./fetch-data.js";
+import { PRODUCT_API_URL } from "./api-routes.js";
+import { createProducts } from "./load-products.js";
 
-export default function filterCategory(products) {
+export default async function filterCategory(e) {
 
-    document.addEventListener("click", handleCategoryClick);
+    const products = await getData(PRODUCT_API_URL);
 
-    function handleCategoryClick(e) {
-        // console.info(e.target.closest(".categories__container").classList.contains("categories__container"));
-        if (e.target.matches("[data-category] *") && e.target.closest(".categories__container").classList.contains("categories__container")) {
+    if (e.target.closest(".category")) {
 
-            const categoryId = e.target.closest("[data-category]").dataset.category;
+        const categoryId = parseInt(e.target.closest("[data-category]").dataset.category);
 
-            if (categoryId !== "1") {
-                const filteredProducts = products.filter(producto => producto.categoria.id === categoryId);
-                // console.info(filteredProducts);
-                loadProducts(filteredProducts);
-            } else {
-                loadProducts(products)
-            }
+        if (categoryId !== 1) {
+            const filteredProducts = products.filter(producto => producto.categoria_id === categoryId);
+            // console.info(filteredProducts);
+            createProducts(filteredProducts);
+        } else {
+            createProducts(products)
         }
     }
 }
