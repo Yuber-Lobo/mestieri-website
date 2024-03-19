@@ -1,11 +1,13 @@
 import { getData } from "./fetch-data.js";
-import { CART_API_URL } from "./api-routes.js";
+import { CART_API_URL, STRIPE_PRICE_API_URL } from "./api-routes.js";
 import { formatPrice } from "./shopping-cart.js";
-
+import { getStripeItems } from "./stripe.js";
 
 export default async function loadShoppingCart() {
 
     const products = await getData(CART_API_URL);
+    const prices = await getStripeItems(STRIPE_PRICE_API_URL);
+
 
     const $cartBody = document.querySelector(".table-cart__body");
     const $template = document.getElementById("template-shopping-cart").content;
@@ -13,6 +15,9 @@ export default async function loadShoppingCart() {
     const $cartTemplate = document.importNode($template, true);
 
     products.forEach(product => {
+
+        const price = prices.find(p => p.metadata.id == product.id);
+
         const $clone = $cartTemplate.cloneNode(true);
 
         const $row = $clone.querySelector(".table-cart__row-content");
@@ -28,6 +33,7 @@ export default async function loadShoppingCart() {
         $row.dataset.producId = id;
         $quantityBtn.dataset.productId = id;
         $quantityBtn.dataset.price = precio;
+        $quantityBtn.dataset.stripePrice = price.id;
         $img.src = img;
         $img.alt = titulo;
         $title.textContent = titulo;

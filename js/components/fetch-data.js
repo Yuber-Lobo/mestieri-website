@@ -1,5 +1,5 @@
 
-async function fetchJson(url, options) {
+export async function fetchJson(url, options) {
     try {
         const response = await fetch(url, options); // Esperamos la respuesta de la solicitud
 

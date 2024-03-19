@@ -1,7 +1,7 @@
 import { getData } from "./fetch-data.js";
-import { PRODUCT_API_URL } from "./api-routes.js";
+import { PRODUCT_API_URL, STRIPE_PRICE_API_URL } from "./api-routes.js";
 import { formatPrice } from "./shopping-cart.js";
-
+import { getStripeItems } from "./stripe.js";
 
 export default async function loadProducts() {
 
@@ -16,11 +16,14 @@ export async function createProducts(products) {
 
     const $cards = document.querySelector(".cards");
     const $fragment = document.createDocumentFragment();
+    const prices = await getStripeItems(STRIPE_PRICE_API_URL);
 
     products.forEach(product => {
 
         const $card = createCard(product);
-        const $cardModal = createModalCard(product);
+        const price = prices.find(p => p.metadata.id == product.id);
+
+        const $cardModal = createModalCard(product,price);
 
         $fragment.appendChild($card);
         $fragment.appendChild($cardModal);
@@ -83,7 +86,7 @@ function createCard(product) {
     return $clonedNode;
 }
 
-function createModalCard(product) {
+function createModalCard(product, price) {
 
     const { id, img, titulo, puntuacion, descripcion, precio, ingredientes, cantidad } = product;
 
@@ -111,6 +114,7 @@ function createModalCard(product) {
     $customizePurchase.appendChild(loadIngredientes(ingredientes));
     $quantityBtn.dataset.productId = id;
     $quantityBtn.dataset.price = precio;
+    $btnAddCart.dataset.stripePrice = price.id;
     $btnAddCart.dataset.productId = id;
 
     if (cantidad >= 1) {
